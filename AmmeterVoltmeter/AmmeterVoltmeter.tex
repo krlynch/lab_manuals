@@ -78,14 +78,20 @@ understand these properties as the results of microscopic physics.
 Let's now introduce the voltmeter and the ammeter.  A voltmeter is
 designed to measure the voltage \textit{across} a portion of a
 circuit, while an ammeter is designed to measure the current
-\textit{passing through} a particular point in the circuit.  While
-these devices have distinct properties and uses, the ammeter and
-voltmeter are such a basic part of the scientific measurement toolkit,
-that the are usually found integrated into a single device called the
-\textit{multimeter}.  Beware, however!  Switching a multimeter from
-ammeter to voltmeter mode usually requires the inputs to be rewired;
-failing to do so can result in damaging the device, or at the very
-least, a blown fuse.  
+\textit{passing through} a particular point in the circuit.  That is,
+the voltmeter stays \textit{outside} the circuit, while the ammeter
+must be inserted \textit{into} the circuit.  While these devices have
+distinct properties and uses, the ammeter and voltmeter are such a
+basic part of the scientific measurement toolkit, that the are usually
+found integrated into a single device called the \textit{multimeter}.
+There are many kinds of multimeters: desktop or handheld, analog or
+digital, manual or autoranging, low and high voltage, etc.  Beware,
+however!  Switching a multimeter from ammeter to voltmeter mode
+usually requires the inputs to be rewired; failing to do so can result
+in blown fuse, or damaging the device.  And finally, for safety
+reasons, never use a multimeter for measurements in high voltage
+circuits, unless you have been specifically trained for that task!  We
+won't be exposing you to such risks in this course.
 
 In order to talk in more detail about these devices, we need a
 language describe the connections between them in a particular
@@ -110,7 +116,23 @@ be multiple equivalent schematics for a given layout.
   \label{tab:schematic}
 \end{table}
 The language of circuit schematics is highly evolved, and there are de
-facto standard representations of typical devices.  Table~
+facto standard representations of typical devices.
+Table~\ref{tab:schematic} contains the common symbols used in this
+lab.  
+
+When learning to build or ``wire'' a circuit from a schematic, it is
+usually best to arrange your physical devices (resistors, power
+supplies, meters, etc.) in the same orientation as the devices on the
+schematic.  Then, follow the ``map'' given by the schematic: pick one
+terminal on the first device, and locate all the terminals on other
+devices that are connected to that terminal all the schematic.  Using
+one or more wires, reproduce those schematic connections in the
+physical world.  Repeat until you have ``visited'' all terminals on
+the schematic.  Note that not all terminals may be labeled identically
+on the schematic and on the physical devices: they may be labeled
+same, differently, or perhaps not labeled at all!  You will need to
+use your judgment, ask questions of your instructor, or simply try
+an experiment to figure things out on your own.
 
 \section{Procedures}
 \label{sec:procedures}
@@ -226,9 +248,46 @@ condition and location you originally found them in!
 
 \section*{Pre-Lab Questions}
 
+On a separate sheet of letter-sized paper, please answer the following
+questions in a neat and organized manner.  
+
+\begin{enumerate}
+\item What do you use a voltmeter for?
+\item How about an ammeter?
+\item If you double the resistance in a circuit while keeping the
+  current unchanged, what happens to the voltage?  What if, instead,
+  you keep the voltage unchanged?
+\item Sketch the relationship between voltage and current implied by
+  Ohm's Law.
+\item You are told that a certain voltage will be between \unit[3]{V}
+  and \unit[5]{V}, and are given a non-autoranging voltmeter.  If the
+  range selectors are labeled \unit[200]{mV}, \unit[2]{V}, and
+  \unit[20]{V}, which range do you select and why?
+\end{enumerate}
+
 \newpage
 
 \section*{Post-Lab Questions}
+
+\begin{enumerate}
+\item Prepare a neatly organized tabulation of your recorded data.
+  Make sure to label your data, and include units where appropriate.  
+\item Plot all of your data sets on a single graph, preferably by
+  computer.  Does your data support or refute Ohm's Law?  Why or why
+  not?  How do you determine the value of the resistance from your
+  plot?  Does it agree with the values you measured directly with the
+  multimeter?  Why or why not?
+\item Imagine you have a circuit consisting or two resistors and one
+  power supply.  How many different ways are there to connect these
+  elements into a circuit?  Draw schematics for all the possible
+  inequivalent circuits.  Make sure to label the components.  For one
+  of these circuits, draw a new diagram showing how you would connect
+  a multimeter to measure the voltage across the power supply, and
+  another to show how you would measure the voltage across one of the
+  resistors.
+\item Discuss briefly whether you have met the objectives of the lab
+  exercises.  
+\end{enumerate}
 
 \end{document}
 
