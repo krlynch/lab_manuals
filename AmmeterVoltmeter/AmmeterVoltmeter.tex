@@ -87,10 +87,30 @@ ammeter to voltmeter mode usually requires the inputs to be rewired;
 failing to do so can result in damaging the device, or at the very
 least, a blown fuse.  
 
-In order to talk in more detail about these devices, we have to
-describe the connections between them in a particular
-\textit{electrical circuit} - the circuit diagram.\fixme{BLAH BLAH
-  BLAH BLAH}.
+In order to talk in more detail about these devices, we need a
+language describe the connections between them in a particular
+\textit{electrical circuit} - the circuit diagram, or schematic.
+Schematics are a kind of descriptive map: they make explicit the wired
+connections between electrical devices in a circuit.  They are,
+however, not a photograph.  The connections between devices in a
+diagram do not indicate literal wires, but only topological
+connections between devices.  There may be multiple physical
+realizations, or \textit{layouts}, of a given schematic, and there may
+be multiple equivalent schematics for a given layout.
+
+\begin{table}
+  \centering
+  \begin{tabular}{|l|c|}\hline
+    Resistor & \includegraphics[width=1in]{figures/resistor}\\ \hline
+    Voltmeter & \includegraphics[width=1in]{figures/voltmeter}\\ \hline
+    Ammeter & \includegraphics[width=1in]{figures/ammeter} \\ \hline
+    DC Voltage source & \includegraphics[width=1in]{figures/dc_supply}\\ \hline
+  \end{tabular}
+  \caption{The various schematic elements used in this lab.}
+  \label{tab:schematic}
+\end{table}
+The language of circuit schematics is highly evolved, and there are de
+facto standard representations of typical devices.  Table~
 
 \section{Procedures}
 \label{sec:procedures}
