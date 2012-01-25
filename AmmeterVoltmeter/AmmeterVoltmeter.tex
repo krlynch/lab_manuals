@@ -14,7 +14,7 @@
 \usepackage[draft]{fixme}
 
 \title{Measuring Electric Phenomena:\\the Ammeter and Voltmeter}
-%\author{Kevin R. Lynch}
+\author{}
 %Kevin R. Lynch, based on an earlier lab by Duli Jain
 %\date{2012-01-24}
 \date{}
@@ -98,24 +98,27 @@ describe the connections between them in a particular
 In this lab, we will investigate the relationship between current and
 voltage in the simplest possible circuit, consisting of a direct
 current voltage source and a single resistance
-(Figure~\ref{fig:simple}).\fixme{Nofigure}
+(Figure~\ref{fig:simple}).
 \begin{figure}
   \centering
-  
+  \includegraphics[width=\textwidth/5]{figures/simplest}
   \caption{The simplest direct current circuit.}
   \label{fig:simple}
 \end{figure}
 \begin{figure}
   \centering
-  
+\includegraphics[width=\textwidth/2]{figures/electro_digi35a_labeled}
   \caption{The direct current power supply.}
   \label{fig:dcps}
 \end{figure}
-\fixme{Nofigure}
 \begin{figure}
   \centering
-  \subfloat[][Settings for voltmeter mode]{picture here}\qquad
-  \subfloat[][Settings for ammeter mode]{picture here}  
+  \subfloat[][Settings for voltmeter mode]{
+    \includegraphics[width=\textwidth/3]{figures/simpson_464_voltmeter}
+  }\qquad
+  \subfloat[][Settings for ammeter mode]{
+    \includegraphics[width=\textwidth/3]{figures/simpson_464_ammeter}
+  }  
   \caption{The multimeter.}
   \label{fig:multimeter}
 \end{figure}
@@ -129,16 +132,23 @@ current voltage source and a single resistance
   your test leads to the \texttt{COMMON} and \texttt{V} inputs, and
   select the \texttt{DCV} (Direct Current Voltage) Function.  Plug in
   and turn on the multimeter.
-\item We'll now get a feel for how the meter works.  First, connect
-  the test leads to opposite ends of the resistor - that is,
-  \textit{across}) the resistor.  To make a measurement, you must
-  select the correct \texttt{RANGE}; the meter will measure values
-  from \unit[0]{V} up to the value specified above the \texttt{RANGE}
-  button: \unit[2]{V} for the 2 button, \unit[20]{V} for the 20
-  button, etc.  For maximum precision, always choose the smallest
-  \texttt{RANGE} value larger than the voltage you are measuring.
-  When in doubt, start at the largest setting, and work you way down.
-  What happens when you go to far?
+\item 
+  \begin{figure}
+    \centering
+    \includegraphics[width=\textwidth/5]{figures/simplest_with_voltmeter}
+    \caption{The simplest direct current circuit, with voltmeter installed.}
+    \label{fig:simplest_with_voltmeter}
+  \end{figure}
+  We'll now get a feel for how the meter works.  First, connect the
+  test leads to opposite ends of the resistor - that is,
+  \textit{across}) the resistor (Figure~).  To make a measurement, you
+  must select the correct \texttt{RANGE}; the meter will measure
+  values from \unit[0]{V} up to the value specified above the
+  \texttt{RANGE} button: \unit[2]{V} for the 2 button, \unit[20]{V}
+  for the 20 button, etc.  For maximum precision, always choose the
+  smallest \texttt{RANGE} value larger than the voltage you are
+  measuring.  When in doubt, start at the largest setting, and work
+  you way down.  What happens when you go to far?
 
   Now, raise the voltage on the power supply; If you have connected
   the circuit and meter correctly, you should see the voltage display
@@ -150,12 +160,11 @@ current voltage source and a single resistance
 
   Turn the voltage down to zero before proceeding.
 \item 
-\fixme{Nofigure}
   \begin{figure}
     \centering
-    
+    \includegraphics[width=\textwidth/5]{figures/simplest_with_ammeter}
     \caption{The direct current circuit with ammeter inserted.}
-    \label{fig:inserted}
+    \label{fig:simplest_with_ammeter}
   \end{figure}
   Next, configure the second multimeter as an ammeter: connect your
   test leads to the \texttt{COMMON} and \texttt{mA} inputs, and select
@@ -167,9 +176,9 @@ current voltage source and a single resistance
   insert the meter between the output of the power supply and the
   resistor.  Make sure the voltmeter is still connected across the
   resistor.  At this point, you should have recreated the circuit in
-  Figure~\ref{fig:inserted}.  Again, slowly raise the voltage output,
-  and observe the changes in the voltage and current values as
-  measured on the respective meters.
+  Figure~\ref{fig:simplest_with_ammeter}.  Again, slowly raise the
+  voltage output, and observe the changes in the voltage and current
+  values as measured on the respective meters.
 \item We are ready to repeat Ohm's measurements!  Vary the voltage in
   small steps (say, ten steps from \unit[0]{V} to \unit[10]{V}), and
   record both the voltage and the corresponding current.  Don't forget
@@ -195,15 +204,11 @@ condition and location you originally found them in!
 
 \newpage
 
-\section{Pre-Lab Questions}
-\label{sec:prelab}
+\section*{Pre-Lab Questions}
 
 \newpage
 
-\section{Post-Lab Questions}
-\label{sec:postlab}
-
-
+\section*{Post-Lab Questions}
 
 \end{document}
 
