@@ -99,10 +99,13 @@ language describe the connections between them in a particular
 Schematics are a kind of descriptive map: they make explicit the wired
 connections between electrical devices in a circuit.  They are,
 however, not a photograph.  The connections between devices in a
-diagram do not indicate literal wires, but only topological
-connections between devices.  There may be multiple physical
-realizations, or \textit{layouts}, of a given schematic, and there may
-be multiple equivalent schematics for a given layout.
+diagram do not indicate literal wires, but only the required
+relationships (ie ``topological connections'') between the devices;
+for practical reasons, there may be multiple ways to connect the
+devices, requiring more or fewer actual wire than shown in the
+diagram.  There may also be multiple physical realizations, or
+\textit{layouts}, of a given schematic, and there may be multiple
+equivalent schematics for a given layout.
 
 \begin{table}
   \centering
@@ -156,24 +159,30 @@ current voltage source and a single resistance
 \begin{figure}
   \centering
   \subfloat[][Settings for voltmeter mode]{
+    \label{fig:multimeter:voltmeter}
     \includegraphics[width=\textwidth/3]{figures/simpson_464_voltmeter}
   }\qquad
   \subfloat[][Settings for ammeter mode]{
+    \label{fig:multimeter:ammeter}
     \includegraphics[width=\textwidth/3]{figures/simpson_464_ammeter}
   }  
   \caption{The multimeter.}
   \label{fig:multimeter}
 \end{figure}
 \begin{enumerate}
-\item First, construct the circuit shown in Figure~\ref{fig:simple},
-  turn the \texttt{Voltage} knob on the power supply
+\item First, construct the circuit shown in Figure~\ref{fig:simple}.
+  For the resistor, use one of the two decade resistor boxes; set this
+  to something between $\unit[100]{\Omega}$ and
+  $\unit[300]{\Omega}$.\fixme{Is this a good range of values?}  Turn
+  the \texttt{Voltage} knob on the power supply
   (Figure~\ref{fig:dcps}) to its minimum setting (fully counter
   clockwise), and the\texttt{Current} limiter knob to its maximum
   setting (fully clockwise).  Plug in and turn on the power supply.
 \item Next, configure your first multimeter as a voltmeter: connect
   your test leads to the \texttt{COMMON} and \texttt{V} inputs, and
-  select the \texttt{DCV} (Direct Current Voltage) Function.  Plug in
-  and turn on the multimeter.
+  select the \texttt{DCV} (Direct Current Voltage) Function; see
+  Figure~\ref{fig:multimeter:voltmeter}.  Plug in and turn on the
+  multimeter.
 \item 
   \begin{figure}
     \centering
@@ -183,8 +192,9 @@ current voltage source and a single resistance
   \end{figure}
   We'll now get a feel for how the meter works.  First, connect the
   test leads to opposite ends of the resistor - that is,
-  \textit{across}) the resistor (Figure~).  To make a measurement, you
-  must select the correct \texttt{RANGE}; the meter will measure
+  \textit{across}) the resistor
+  (Figure~\ref{fig:simplest_with_voltmeter}).  To make a measurement,
+  you must select the correct \texttt{RANGE}; the meter will measure
   values from \unit[0]{V} up to the value specified above the
   \texttt{RANGE} button: \unit[2]{V} for the 2 button, \unit[20]{V}
   for the 20 button, etc.  For maximum precision, always choose the
@@ -200,7 +210,9 @@ current voltage source and a single resistance
   they are correct.  What happens when you swap the leads connected to
   the resistor?  Why?
 
-  Turn the voltage down to zero before proceeding.
+  Turn the voltage down to zero before proceeding; unless our
+  instructions say otherwise, you should always do this before
+  changing the configuration of a circuit.
 \item 
   \begin{figure}
     \centering
@@ -210,25 +222,30 @@ current voltage source and a single resistance
   \end{figure}
   Next, configure the second multimeter as an ammeter: connect your
   test leads to the \texttt{COMMON} and \texttt{mA} inputs, and select
-  the \texttt{DCmA} (Direct Current milliAmps) Function.  Again, you
-  must choose an appropriate \texttt{RANGE}.  You measure current
-  \textit{through} a device, which means you must insert the meter
-  \textit{into} the circuit: you must ``cut'' the circuit, and
-  ``splice'' the meter into the ``hole''.  In this case, you should
-  insert the meter between the output of the power supply and the
-  resistor.  Make sure the voltmeter is still connected across the
-  resistor.  At this point, you should have recreated the circuit in
+  the \texttt{DCmA} (Direct Current milliAmps) Function; see
+  Figure~\ref{fig:multimeter:ammeter}.  Again, you must choose an
+  appropriate \texttt{RANGE}.  You measure current \textit{through} a
+  device, which means you must insert the meter \textit{into} the
+  circuit: you must ``cut'' the circuit, and ``splice'' the meter into
+  the ``hole''.  In this case, you should insert the meter between the
+  output of the power supply and the resistor.  Make sure the
+  voltmeter is still connected across the resistor.  At this point,
+  you should have recreated the circuit in
   Figure~\ref{fig:simplest_with_ammeter}.  Again, slowly raise the
   voltage output, and observe the changes in the voltage and current
   values as measured on the respective meters.
 \item We are ready to repeat Ohm's measurements!  Vary the voltage in
   small steps (say, ten steps from \unit[0]{V} to \unit[10]{V}), and
   record both the voltage and the corresponding current.  Don't forget
-  the units!  Repeat the measurement; are your results consistent?
-  Select a different resistor, and repeat your measurements.  Plot
-  your data, $I$ vs $V$: if Ohm was right, this should be linear.  Is
-  it?  What is the slope?  How is this related to $R$?
-\item Finally, we will use the multimeter in \texttt{Resistance} mode
+  the units!  Quickly plot your data, $I$ vs $V$: if Ohm was right,
+  this should be linear.  Is it?  What is the slope?  How is this
+  related to $R$?  You will do this again more carefully in your
+  Post-Lab exercises, but it's always a good idea to make ``quick and
+  dirty'' plots while taking data to help get a feel for what the data
+  may be telling you.  Repeat the measurements; are your results
+  consistent?  Select a different resistance value, and repeat your
+  measurements.
+\item Next, we will use the multimeter in \texttt{Resistance} mode
   to confirm our results.  In this mode, the multimeter performs the
   same experiment we just did in large: it applies a known voltage,
   measures the demand current, and deduces the resistance from these
@@ -239,6 +256,67 @@ current voltage source and a single resistance
   resistor, and record the value.  Does the value you measured with
   the above procedure agree with the value the meter measures
   directly?
+\item Imagine now that you are the power supply.  When you look out
+  from your terminals, all you see is one wire heading out to the
+  left, and one wire heading out to the right; you can't actually tell
+  what's connected to the wires!  All you can do is measure the
+  resistance of the circuit that you are ``driving''.\footnote{We'll
+    have a lot more to say about this point of view later in the
+    semester, when we talk about not only resistors, but capacitors,
+    inductors, diodes, etc.}  In other words, to a DC power supply,
+  the whole collection of devices connected to the terminals looks
+  like a single resistor; you must be able to predict the effective
+  resistance that a collection of devices in a circuit presents to the
+  power supply.  In particular, realize that an ammeter or voltmeter
+  look \textit{just like any other resistor} to the power supply!  It
+  should be obvious that we want to design these meters so that they
+  have a minimal impact on the circuit: you don't want to change the
+  behavior of the circuit when you connect the meter!  This implies
+  different requirements on an ammeter and a voltmeter.  Let's explore
+  what happens when you connect multiple resistors in circuit in two
+  different ways.  We'll study this in much more detail in a later
+  lab; here, we'll explore the implications for the design of the
+  meters. 
+  \begin{enumerate}
+  \item \label{item:identical}
+    \begin{figure}
+      \centering
+      \subfloat[][The series combination.]{
+        \label{fig:resistances:series}
+        \includegraphics[width=\textwidth/3]{figures/series}
+      }\qquad
+      \subfloat[][The parallel combination.]{
+        \label{fig:resistances:parallel}
+        \includegraphics[width=\textwidth/3]{figures/parallel}
+      }  
+      \caption{Series and parallel resistance combinations.}
+      \label{fig:resistances}
+    \end{figure}
+    Configure one of your multimeters to measure resistance.  Set
+    \textit{both} of you decade resistance boxes to the same value;
+    measure and record both values.  Are they identical?  Why or why
+    not? 
+  \item \label{item:series} Next, wire the circuit shown in
+    Figure~\ref{fig:resistances:series}.  This is known as the
+    \textit{series} combination of circuit elements: the tail of the
+    first element is connected to the head of the second element.
+    Measure the resistance of this combination.  How does it compare
+    to the individual resistances?  Double one of the resistances, and
+    perform the measurement again.  How does it compare?
+  \item \label{item:parallel} Reset both resistors to the same value,
+    and wire the circuit shown in
+    Figure~\ref{fig:resistances:parallel}.  This is the
+    \textit{parallel} combination: the heads and tails of the
+    resistors are tied together.  Measure the resistance.  How does it
+    compare to the individual resistances?  Double one of the
+    resistances, and measure again.  How does it compare this time?
+  \item You always connect a voltmeter \textit{in parallel} with the
+    element you are measuring across, and you connect an ammeter
+    \textit{in series} with the element you are measuring the current
+    through.  Ideally, what would the resistance of the ammeter be so
+    as not to change the behavior of the circuit?  The voltmeter?
+    Why? 
+  \end{enumerate}
 \end{enumerate}
 
 Make sure you clean up your work space, and return every item to the
@@ -273,10 +351,21 @@ questions in a neat and organized manner.
 \item Prepare a neatly organized tabulation of your recorded data.
   Make sure to label your data, and include units where appropriate.  
 \item Plot all of your data sets on a single graph, preferably by
-  computer.  Does your data support or refute Ohm's Law?  Why or why
-  not?  How do you determine the value of the resistance from your
-  plot?  Does it agree with the values you measured directly with the
-  multimeter?  Why or why not?
+  computer.  Ff Ohm was right, this should be linear.  Is it?  Does
+  your data support or refute Ohm's Law?  Why or why not?  How do you
+  determine the value of the resistance from your plot?  Does it agree
+  with the values you measured directly with the multimeter?  Why or
+  why not?
+\item In Step~\ref{item:identical} of the procedure, you separately
+  measure the values of two ``identical'' resistors.  Were they
+  identical?  Why or why not?
+\item When you combine resistors in series and parallel (as you did in
+  Steps~\ref{item:series} and~\ref{item:parallel} of the procedure),
+  the resistance of the combination can be predicted if you know the
+  individual resistances.  Can you make an educated guess as to the
+  correct formulae for these combinations?
+\item Ideally, what would the resistance of the ammeter be so as not
+  to change the behavior of the circuit?  The voltmeter?  Why?
 \item Imagine you have a circuit consisting or two resistors and one
   power supply.  How many different ways are there to connect these
   elements into a circuit?  Draw schematics for all the possible
