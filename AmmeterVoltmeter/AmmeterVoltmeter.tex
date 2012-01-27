@@ -6,6 +6,7 @@
 \usepackage{units}
 \usepackage{graphicx}
 \usepackage{subfig}
+\usepackage{floatrow}
 \usepackage[margin=1in]{geometry}
 \usepackage{listings}
 \usepackage[numbers,sort&compress]{natbib}
@@ -140,10 +141,6 @@ an experiment to figure things out on your own.
 \section{Procedures}
 \label{sec:procedures}
 
-In this lab, we will investigate the relationship between current and
-voltage in the simplest possible circuit, consisting of a direct
-current voltage source and a single resistance
-(Figure~\ref{fig:simple}).
 \begin{figure}
   \centering
   \includegraphics[width=\textwidth/5]{figures/simplest}
@@ -169,6 +166,13 @@ current voltage source and a single resistance
   \caption{The multimeter.}
   \label{fig:multimeter}
 \end{figure}
+
+In this lab, we will investigate the relationship between current and
+voltage in the simplest possible circuit, consisting of a direct
+current voltage source and a single resistance
+(Figure~\ref{fig:simple}).  You should receive a power supply, two
+digital multimeters, and two decade resistance boxes.  The wires you
+need are located on a rack in the back of the lab.
 \begin{enumerate}
 \item First, construct the circuit shown in Figure~\ref{fig:simple}.
   For the resistor, use one of the two decade resistor boxes; set this
@@ -283,12 +287,11 @@ current voltage source and a single resistance
       \centering
       \subfloat[][The series combination.]{
         \label{fig:resistances:series}
-        \includegraphics[width=\textwidth/3]{figures/series}
-      }\qquad
-      \subfloat[][The parallel combination.]{
+        \includegraphics[scale=2.5]{figures/series}
+      }\qquad \subfloat[][The parallel combination.]{
         \label{fig:resistances:parallel}
-        \includegraphics[width=\textwidth/3]{figures/parallel}
-      }  
+        \includegraphics[scale=2.5]{figures/parallel}
+      }
       \caption{Series and parallel resistance combinations.}
       \label{fig:resistances}
     \end{figure}
