@@ -7,7 +7,6 @@
 \usepackage{graphicx}
 \usepackage[pdftex]{hyperref}
 \usepackage{subfig}
-\usepackage{floatrow}
 \usepackage[margin=1in]{geometry}
 \usepackage{listings}
 \usepackage[numbers,sort&compress]{natbib}
@@ -43,7 +42,7 @@
   conductors, 
 \item To measure the resistivity and temperature coefficient of
   tungsten, and
-\item To design and implement as resistivity measurement experiment. 
+\item To design and implement a resistivity measurement experiment. 
 \end{enumerate}
 
 \section{Introduction}
@@ -122,7 +121,7 @@ for both designing the experiment, and
 
 \begin{figure}
   \centering
-  \includegraphics[width=\textwidth/2]{figures/filament}
+  \includegraphics[width=2\textwidth/3]{figures/filament}
 %% Figure in public domain:
 %% http://en.wikipedia.org/wiki/File:Filament.jpg
   \caption{The coiled coil of an incandescent bulb filament.}
@@ -147,11 +146,18 @@ need to buy more \unit[60]{W} light bulbs.'').  This rating assumes
 that the bulb will be operated at a fixed \unit[120]{V}; what happens
 to the power dissipation at other operating voltages?
 
+\begin{figure}
+  \centering
+  \includegraphics[width=2\textwidth/3]{figures/variac}
+%% Photo by Kevin R. Lynch, 2012
+  \caption{The variable transformer, aka variac.}
+  \label{fig:variac}
+\end{figure}
 For this set of measurements, you should receive a set of incandescent
 bulbs (\unit[25]{W}, \unit[40]{W}, \unit[60]{W}, \unit[75]{W}, and
-\unit[100]{W}), a variac (variable transformer), two multimeters, a
-lamp socket board and connecting wires.
-
+\unit[100]{W}), a variac (variable transformer; see
+Figure~\ref{fig:variac}), two multimeters, a lamp socket board and
+connecting wires.
 \begin{quote}
   Warning!  The light bulbs \textit{will} get \textbf{hot}!  Be
   careful when you unscrew them so you don't get burnt.  In addition,
@@ -163,21 +169,25 @@ lamp socket board and connecting wires.
 \end{quote}
 
 %%
-\fixme{need new circuit schematic elements}
 \begin{table}
   \centering
   \caption{The new circuit schematic symbols for this lab.}
   \begin{tabular}{|l|c|}\hline
-    Variac & \\ \hline
-    Lamp & \\ \hline
+    Variac & \includegraphics[width=1in]{figures/variac_schem}\\ \hline
+%% Figure derived from 
+%% http://en.wikipedia.org/wiki/File:Circuit_elements.svg
+%% under GNU Free Documentation License
+    Lamp & \includegraphics[width=1in]{figures/lamp}\\ \hline
   \end{tabular}
   \label{tab:symbols}
 \end{table}
 %%
-\fixme{need new circuit schematic}
 \begin{figure}
   \centering
-  \includegraphics[width=\textwidth/2]{figures/filament}
+  \includegraphics[width=2\textwidth/3]{figures/circuit}
+%% Figure derived from 
+%% http://en.wikipedia.org/wiki/File:Circuit_elements.svg
+%% under GNU Free Documentation License
   \caption{The circuit including the incandescent lamp powered by the variac.}
   \label{fig:circuit}
 \end{figure}
@@ -204,11 +214,12 @@ lamp socket board and connecting wires.
 \end{table}
 
 \begin{enumerate}
-\item Measure and record the ambient temperature in the room.
+\item Measure and record the ambient temperature.  Why do you need
+  this? 
 \item Directly measure the resistance of each of your lamps.  Using
   the data in Table~\ref{tab:filament} you can determine the
-  resistivity of tungsten.  Are your measurements consistent?  If not,
-  why not?
+  resistivity of tungsten as predicted by each lamp individually.  Are
+  your measurements consistent?  If not, what might be the problem?
 \item Build the circuit shown in Figure~\ref{fig:circuit}, which will
   be run at \unit[120]{V}.  The multimeter measuring voltage should be
   set to the \texttt{AC V} setting and \unit[200]{V} \texttt{Range};
@@ -229,11 +240,11 @@ lamp socket board and connecting wires.
 \subsection{Variations on a theme}
 \label{sec:variations}
 
-\fixme{need new multimeter diagram}
 \begin{figure}
   \centering
-  \includegraphics[width=\textwidth/2]{figures/filament}
-  \caption{The high percision BK XXXX multimeter.}
+  \includegraphics[width=2\textwidth/3]{figures/bk_5460}
+%% Photo by Kevin R. Lynch, 2012
+  \caption{The high percision BK Precision 5460 multimeter.}
   \label{fig:multimeter}
 \end{figure}
 In this section, you will be responsible for answering the following
@@ -273,11 +284,19 @@ Here are some of the possible materials to analyze:
     and carbon, with traces of other elements.} and
   nichrome.\footnote{A steel-like alloy of nickel, chromium, and
     iron.}
-\fixme{need calorimeter picture}
 \begin{figure}
   \centering
-  \includegraphics[width=\textwidth/2]{figures/filament}
-  \caption{The calorimeter heating element.}
+  \subfloat[][External View]{
+    \label{fig:calorimeter:external}
+    \includegraphics[width=\textwidth/3]{figures/external}
+%% Photo by Kevin R. Lynch, 2012
+  } \qquad
+  \subfloat[][Internal View]{
+    \label{fig:calorimeter:internal}
+    \includegraphics[width=\textwidth/3]{figures/internal}
+%% Photo by Kevin R. Lynch, 2012
+  }
+  \caption{Internal and external views of the calorimeter.}
   \label{fig:calorimeter}
 \end{figure}
 \item Sometimes, getting access to the wire whose resistivity you want
@@ -304,14 +323,22 @@ Answer these questions as instructed on Blackboard; make sure to
 submit them before your lab session!
 
 \begin{enumerate}
-\item 
+\item What's the difference between \textit{intrinsic} and
+  \textit{extrinsic} properties of a material?
+\item We give a relation between dissipated power in, voltage across, and
+  current through, a resistor.  Ohm's Law gives a relationship between
+  the voltage, current, and resistance.  Express dissipated power in
+  terms of the voltage and resistance; in terms of the current and
+  resistance. 
+\item A perfect conductor has zero resistivity, while a real conductor
+  has a finite, but near zero resistivity.  What resistivity should a
+  perfect insulator have?  Should a real insulator have a very large
+  or very small resistivity?
 \end{enumerate}
 
 \newpage
 
 \section*{Post-Lab Exercises}
-
-You 
 
 \begin{enumerate}
 \item Use the data you collected to determine the resistivity of
@@ -320,7 +347,11 @@ You
 \item Use the data you collected to determine the temperature
   coefficient of resistivity for tungsten; be sure to include an
   estimate of the uncertainty, and discuss how you determined that
-  uncertainty.
+  uncertainty.  Since you have the resistivity at six temperatures,
+  you should produce at least one (and better, two!) plots of the
+  resistivity versus temperature; is it linear?  Are you sure?  Can
+  you extrapolate from the high operating temperatures down to room
+  temperature? 
 \item By measuring the voltage and current used for each lamp, you can
   calculate the actual dissipated power.  How does this compare to the
   advertised value?  Stefan's Law (look back at your Physics I text)
