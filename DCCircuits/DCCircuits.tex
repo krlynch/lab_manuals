@@ -38,7 +38,7 @@
 \label{sec:objectives}
 
 \begin{enumerate}
-\item To determine the resistance of a number of resistors using 
+\item To determine the resistance of resistors using
   \begin{inparaenum}
   \item a multimeter, and
   \item Ohm's Law,
@@ -46,7 +46,7 @@
 \item To verify the equivalent resistance formulae for series and
   parallel resistor combinations, and
 \item To calculate voltage drop and current draw in series and
-  parallel resistor combination.
+  parallel resistor combinations.
 \end{enumerate}
 
 \section{Introduction}
@@ -72,16 +72,16 @@ the product of the voltage drop and the current draw
   P = VI = I^2 R = \frac{V^2}{R}\ .
 \end{gather*}
 
-There is a certain maximum power draw that real resistors can safely
-dissipate without an undue temperature rise, and correspondingly, a
-maximum safe current, $I_\mathrm{max}$, which the resistor can handle
-without overheating.  The previous equation gives
+There is a certain maximum power draw, $P_\mathrm{max}$, that real
+resistors can safely dissipate without an undue temperature rise, and
+correspondingly, a maximum safe current, $I_\mathrm{max}$, which the
+resistor can handle without overheating.  The previous equation gives
 \begin{gather*}
-  I_\mathrm{max} = \sqrt{\frac{P}{R}}\ ,
+  I_\mathrm{max} = \sqrt{\frac{P_\mathrm{max}}{R}}\ ,
 \end{gather*}
-Where $P_\mathrm{max}$ is the maximum rated power.  Most resistors
-used in this laboratory have $P_\mathrm{max} = \unit[1]{W}$; resistors
-in consumer electronics are typically rated for
+where $P_\mathrm{max}$ is the maximum rated power.  Resistors used in
+this laboratory have $P_\mathrm{max} = \unit[1]{W}$; resistors in
+consumer electronics are typically rated for
 $\unit[\nicefrac{1}{10}]{W}$ or less, while industrial power resistors
 with multi-\unit{kW} ratings are also available.
 
@@ -152,7 +152,7 @@ lead'' type; while particularly convenient for this lab, they are not
 used much anymore, except in niche applications.  For modern consumer
 or high precision electronics, however, they are both too inaccurate,
 and too large to use.  The convenience factor for hands-on work is
-large: they are large enough for you to measure and manipulate them by
+great: they are large enough for you to measure and manipulate by
 hand, they are labeled with a standard color banding code
 (Table~\ref{tab:colorcode}) and they are easy to attach to a board via
 hand soldering.
@@ -176,17 +176,17 @@ hand soldering.
 When two or more resistors are connected in a circuit, they can always
 be replaced with an \textit{equivalent resistor} that has the same
 effect as the individual resistors.  In fact, from the point of view
-of the power supply, which can only see the global properties
-(resistance, and a few others we will discuss later in the semester)
-of the circuit, the entire circuit can be reduced to a single
-equivalent resistance.  To perform these replacements, however, we
-must know the rules to apply.  For series combined resistors, as shown
-in Figure~\ref{fig:combinations:series}, the equivalent resistance is
-the sum of all the individual resistances:
+of the power supply, which can only see the global properties of the
+circuit (resistance, and a few others we will discuss later in the
+semester), the entire circuit can be reduced to a single equivalent
+resistance.  To perform these replacements, however, we must know the
+rules to apply.  For series combined resistors, as shown in
+Figure~\ref{fig:combinations:series}, the equivalent resistance is the
+sum of all the individual resistances:
 \begin{gather*}
   R_S = R_1 + R_2 + R_3 + \cdots = \sum_i R_i\ .
 \end{gather*}
-This is because the same current must pass through each circuit.  For
+This is because the same current must pass through each resistor.  For
 parallel combined resistors, as shown in
 Figure~\ref{fig:combinations:parallel}, the inverse of the equivalent
 resistance is the sum of the inverses of the individual resistances:
@@ -196,9 +196,9 @@ resistance is the sum of the inverses of the individual resistances:
 \end{gather*}
 In this case, the voltage drop across all of the resistors must be the
 same, so the total current is divided between all the resistors
-according to Ohm's Law.  The current in a given parallel
-\textit{branch} of the circuit is inversely proportional to the
-resistance of that branch.
+according to Ohm's Law.  The current in a given \textit{branch} of the
+parallel circuit is inversely proportional to the resistance of that
+branch.
 
 \begin{figure}
   \centering
@@ -212,8 +212,9 @@ More complicated combinations of resistors can often be reduced to
 instance, in the circuit in Figure~\ref{fig:circuit}, the effective
 resistance of all five resistors can be determined first by combining
 the three parallel resistors $R_3$, $R_4$, and $R_5$, into a single
-effective resistance $R_P$, and then combining $R_1$, $R_2$, and $R_P$
-into a single effective resistance $R_S$.
+effective resistance $R_P$, and then combining the three series
+resistors $R_1$, $R_2$, and $R_P$ into a single effective resistance
+$R_S$.
 
 \section{Procedures}
 \label{sec:procedures}
@@ -233,20 +234,20 @@ power supply, and a pair of multimeters.
   $I_{i,\mathrm{max}}$; the current in each resistor must be kept
   below this maximum safe value.  In later steps, you must make sure
   that the power supply does not drive more than the maximum safe
-  current of any of the resistors.
+  current through any of the resistors.
 \item Build the circuit shown in Figure~\ref{fig:circuit}.  In this
   experiment, the ammeter has two purposes:
   \begin{inparaenum}
   \item To ensure that the current remains constant throughout the
     measurements, and
-  \item To ensure that you don't exceed the maximum save current
+  \item To ensure that you don't exceed the maximum safe current
     through any resistor.
   \end{inparaenum}
-\item Determine a safe operating voltage for this circuit.  You will
-  either need to calculate the maximum safe voltage using Ohm's Law,
-  or ensure, using the ammeter, that the power supply never drives
-  more than the \textit{lowest} of the previously calculated maximum
-  currents.
+\item Determine a safe operating voltage for this circuit.  Calculate
+  the maximum safe voltage using Ohm's Law and the series and parallel
+  resistance formulae.  Set the power supply voltage below this value,
+  and then check (by touching!) each connected resistor to make sure
+  it isn't getting hot!
 \item Set the second multimeter to read DC Voltage.  Measure and
   record the potential difference across the power supply.  Then,
   measure the potential difference across each of the resistors.
@@ -256,7 +257,9 @@ power supply, and a pair of multimeters.
   stays constant throughout your measurements!
 \item Remove the meters and power supply from the circuit.  Measure
   and record the resistance between the following sets of points:
-  $AD$, $AC$, $BD$, and $CD$.
+  $AD$, $AC$, $BD$, and $CD$.  You've already measured the values of
+  the individual resistors; do your measurements of the parallel and
+  series combinations match with predictions?
 \end{enumerate}
 
 \newpage
@@ -274,8 +277,8 @@ submit them before your lab session!
   voltmeter in series or parallel with the potential drop you are
   trying to measure?
 \item What is the resistance of an ideal ammeter?  Do you connect an
-  ammeter in series or parallel with the current you are trying to
-  measure? 
+  ammeter in series or parallel with the current draw you are trying
+  to measure?
 \item Write an expression for the equivalent resistance of three
   parallel resistors.  What about three series resistors?
 \item If a resistor is banded Red-Blue-Green-Silver, what are the
@@ -290,34 +293,35 @@ submit them before your lab session!
 \item For the five resistors in your measurement, tabulate the
   following data:
   \begin{inparaenum}
-  \item The nominal resistance given by the color code,
-  \item The nominal tolerance,
-  \item The direct multimeter measurement of their values,
-  \item The percent difference between the nominal and measured
+  \item the nominal resistance given by the color code,
+  \item the nominal tolerance,
+  \item the direct multimeter measurement of their values,
+  \item the percent difference between the nominal and measured
     resistance, and
-  \item The maximum safe current.
+  \item the maximum safe current.
   \end{inparaenum}
   How did you define the percent difference? Are all of the measured
   values equal to the nominal values within tolerance?
 \item Tabulate the voltage drop across, and current through, each of
-  your resistors.  From these data, predict the resistance of each
-  resistor.  Do these values match the directly measured values in
-  your first table?
+  your resistors.  From these data, derive the resistance of each
+  resistor.  Do these derived values match the directly measured
+  values in your first table?
 \item In the last step of the procedure, you measured a number of
   different series and parallel combinations of resistors.  Using the
-  individual resistor values, predict the combinations you measured.
-  Do your predictions match the measurements?  Why or why not?
-\item The voltage drops around a closed loop must equal zero.  This
-  circuit forms a closed loop; the power supply \textit{raises} the
-  voltage, while the voltage drops around the circuit reduce the
-  voltage.  Does this sum to zero?  Why or why not?  
+  individual measured resistor values, predict these combinations.  Do
+  your predictions match the measurements?  Why or why not?
+\item The voltage drops around a closed loop must equal zero.  The
+  circuit studied here forms a closed loop; the power supply
+  \textit{raises} the voltage, while the voltage drops around the
+  circuit reduce the voltage.  Do these sum to zero in this
+  experiment?  Why or why not?
 \item Due to charge conservation, the current leaving the positive
   terminal of the power supply must return to the negative terminal.
-  Does your circuit satisfy these requirements?  How do you know?
+  Does your circuit satisfy these requirements?  How can you tell?
 \item Energy conservation demands that the power delivered to the
   circuit by the power supply must equal the power dissipated in the
-  circuit.  Tabulate the power delivered and the power dissipated in
-  each resistor.  Are they equal?
+  circuit.  Tabulate the total power delivered and the power
+  dissipated in each resistor.  Are they equal?
 \item Discuss briefly whether you have met the objectives of the lab
   exercises.
 \end{enumerate}
