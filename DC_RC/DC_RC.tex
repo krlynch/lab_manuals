@@ -205,15 +205,22 @@ a line to extract the slope, and hence the capacitance.
 
 \begin{figure}
   \centering
-  \includegraphics[angle=90,width=\textwidth/2]{figures/wavetek-signal-generator}
+  \subfloat[][Wavetek Signal Generator]{
+    \label{fig:meters:siggen}
+    \includegraphics[angle=90,width=\textwidth/3]{figures/wavetek-signal-generator}
 % Photo by Trong Nguyen, York College CLT, 2012-02
-  \caption{The Wavetek Signal Generator}
-  \label{fig:siggen}
+  } \qquad
+  \subfloat[][BK Precision Frequency Measuring Multimeter]{
+    \label{fig:meters:freq}
+    \includegraphics[width=\textwidth/3]{figures/bk_5460}
+  }
+  \caption{The meters used in this lab.}
+  \label{fig:meters}
 \end{figure}
 You should receive an oscilloscope, a signal generator (see
-Figure~\ref{fig:siggen}), a frequency measuring multimeter, one
-unknown capacitor, a decade capacitance box, and a decade resistance
-box.
+Figure~\ref{fig:meters:siggen}), a frequency measuring multimeter (see
+Figure~\ref{fig:meters:freq}), one unknown capacitor, a decade
+capacitance box, and a decade resistance box.
 
 \subsection{Time Constant of an RC Circuit}
 \label{sec:timeconst}
@@ -223,7 +230,7 @@ box.
   \centering
   \subfloat[][Measurement Circuit]{
     \label{fig:RCmeasuring:circuit}
-\includegraphics[width=\textwidth/3]{figures/measurement-circuit}
+    \includegraphics[width=\textwidth/3]{figures/measurement-circuit}
   } \qquad
   \subfloat[][Oscilloscope Display]{
     \label{fig:RCmeasuring:oscope}
@@ -333,25 +340,33 @@ This is true if and only if
 \end{gather*}
 This is a ``trivial'' problem to solve: just separate and integrate:
 \begin{gather*}
-  M(x) = e^{\int P(x) \dd x}\ .
+  M(x) = e^{\int P(x) \dd x + c} = e^c e^{\int P(x) \dd x } = c' e^{\int P(x) \dd x}\ ,
 \end{gather*}
+where $c$ is the constant of integration for this indefinite integral.
 Now, go a few lines back up the page:
 \begin{gather*}
   \deriv{}{x} \left( M(x) y(x) \right) = M(x) Q(x)\ .
 \end{gather*}
-We can solve this one trivially, too, just by integrating
+We can solve this one trivially, too, just by integrating; let's make
+this a definite integral between $x_0$ and $x$.  We get the left hand
+side from the Fundamental Theorem of Calculus
 \begin{gather*}
-  M(x) \left( y(x) -c \right) = \int^x M(x) Q(x) \dd x\ ,
+  M(x) y(x) - M(x_0) y(x_0) = \int_{x_0}^x M(x) Q(x) \dd x\ ,
 \end{gather*}
 where, since this is an indefinite integral, requires an integration
 constant $c$.  Finally, then, we can solve the general problem:
 \begin{gather*}
-  y(x) = M(x)^{-1} \int^x M(x) Q(x) \dd x + c\ .
+  y(x) = M(x)^{-1} \left( M(x_0) y(x_0) + \int_{x_0}^x M(x) Q(x) \dd x
+  \right) \ . 
 \end{gather*}
+Note that the integration constant in the definition of $M(x)$ cancels
+here, so it doesn't really matter what it was; let's just choose $c' =
+1$. 
 
-In the case of the charging RC circuit, $x = t$, $y(x) = q(t)$, $P(t)
-= 1/RC$, and $Q(t) = V_s/R$.  Integrating gives us $M(t) = e^{t/RC}$,
-giving us the solution:
+In the case of the charging RC circuit with zero initial charge, $x =
+t$, $y(x) = q(t)$, $x_0 = 0$, $y(x_0) = 0$, $P(t) = 1/RC$, and $Q(t) =
+V_s/R$.  Integrating gives us $M(t) = e^{t/RC}$, giving us the
+solution:
 \begin{align*}
   q(t) &= e^{-t/RC} \int_0^t e^{t/RC} \frac{V_s}{R} \dd t\\
   &= \frac{V_s}{R} RC e^{-t/RC} \left( e^{t/RC} -1 \right)\\
