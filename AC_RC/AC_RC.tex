@@ -101,7 +101,7 @@ highly amenable to mathematical manipulation and analysis.  Let's take
   V_s(t) = V_s \cos \omega t\ .
 \end{gather*}
 In Appendix~\ref{sec:solutions} we'll derive the full solution; here,
-we require only the \textit{steady state} portion, which gives the
+we require only the \textit{steady state response}, which gives the
 time dependent charge as
 \begin{gather*}
   q(t) = V_s C \frac{RC\omega}{1+(RC\omega)^2} \sin( \omega t + \phi)\ ,
@@ -110,8 +110,8 @@ where $\tan \phi = 1/RC\omega$.  We know $\phi$ as a \textit{phase
   constant}.  When we calculate the current flow, $I(t)$, in this
 circuit, we find a remarkable thing:
 \begin{gather*}
-  I(t) = \omega V_s C \frac{RC\omega}{1+(RC\omega)^2} \cos( \omega t +
-  \phi)\ .
+  I(t) = \frac{V_s}{R} \frac{(RC\omega)^2}{1+(RC\omega)^2} \cos(
+  \omega t + \phi)\ .
 \end{gather*}
 \begin{figure}
   \centering
@@ -120,21 +120,21 @@ circuit, we find a remarkable thing:
     voltage $V(t)$ and the derived current $I(t)$.}
   \label{fig:phase}
 \end{figure}
-Because of the presence of the capcitor, the applied voltage, $V_s(t)$
-gives rise to a current which has a frequency dependent amplitude, but
-more importantly, which does not have the same phase; see
-Figure~\ref{fig:phase}.  We say that the current \textit{leads} the
-voltage, or that the voltage \textit{follows} the current; this isn't,
-strictly speaking, true, but is a useful shorthand.
+Because of the presence of the capcitor, the applied voltage $V_s(t)$
+gives rise to a current which not only has a frequency dependent
+amplitude, but more importantly has a different phase; see
+Figure~\ref{fig:phase}.  Because $phi$ is positive, the current rises
+slightly before the voltage, and we say the current \textit{leads} the
+voltage, or that the voltage \textit{follows} the current.  
 
-We don't have the tools to measure the current profile and compare it
-directly to the applied voltage - remember, we only have ammeters,
-voltmeters, and oscilloscopes (which behave for most purposes like
-voltmeters).  To use the oscilloscope to measure this phase
-difference, we must find a voltage that follows exactly in phase with
-the current \ldots and we have one of those: the voltage across the
-resistor.  Measuring $V_R(t)$, then, and comparing to $V_s(t)$ allows
-us to measure $\phi$.  
+In our teaching labs, we don't have the tools to measure the current
+profile and compare it directly to the applied voltage - remember, we
+only have ammeters, voltmeters, and oscilloscopes (which behave for
+most purposes like voltmeters).  To use the oscilloscope to measure
+this phase difference, we must find a voltage that follows exactly in
+phase with the current \ldots and we have one of those: the voltage
+across the resistor.  Measuring $V_R(t)$ and comparing with $V_s(t)$
+allows us to measure $\phi$.
 \begin{gather*}
   V_s(t) = V_s \cos \omega t\\
   V_R(t) = V_s \frac{(RC\omega)^2}{1+(RC\omega)^2} \cos( \omega t
@@ -171,37 +171,37 @@ vanishes, while the amplitude of $V_R(t)$ goes to $V_s$, while the
 phase difference between the applied voltage and resulting current
 also vanishes.  In other words, the circuit acts like the capacitor
 isn't even there!  Capacitors become transparent to currents at high
-frequency.
+frequency, and opaque to currents at very low frequencies.
 
-There is another way to view the complexities voltages and currents in
-RC circuits.\footnote{This is a really bad physics pun \ldots ask your
-  instructor to explain.}  Let's start by noting that the quantity
-$RC\omega$ is dimensionless; in other words, $1/C\omega$ has the units
-of resistance.  It \textit{isn't} a resistance, but it has the same
-units, and some of the same properties.  Let's define the quantity
+There is another way to view the complexities of voltages and currents
+in AC RC circuits.  Note that the quantity $RC\omega$ is
+dimensionless; in other words, $1/C\omega$ has the units of
+resistance.  It \textit{isn't} a resistance (it's not a constant, for
+starters), but it has the same units, and some of the same properties.
+Let's define the quantity
 \begin{gather*}
   X_C = \frac{1}{\omega C} = \frac{1}{2\pi f C}\ ,
 \end{gather*}
-which we'll call the \textit{capacitive reactance}, or simply the
-reactance of the circuit.  Next, define the \textit{impedance} $Z$
+which we'll call the \textit{capacitive reactance} of the circuit.
+Next, define the \textit{impedance} $Z$
 \begin{gather*}
   Z^2 = R^2 + X_C^2\ .
 \end{gather*}
 As it turns out, if we look only at the amplitudes of the current and
 applied voltages, they are related by 
 \begin{gather*}
-  V_s = Z I\ .
+  V_s = Z I\ ,
 \end{gather*}
-Next, note that
+a sort of generalized version of Ohm's Law.  Note further that
 \begin{gather*}
   \tan \phi = \frac{1}{RC\omega} = \frac{X_C}{R}\ .
 \end{gather*}
 Thus, $Z$ and $\phi$ can be looked on as the magnitude and direction
 respectively of a \textit{vector} that gives the relative behavior of
-$V_R(t)$ and $V_C(t)$ compared to $V_s(t)$.  The vectors here are
-called \textit{phasors}, and phasor analysis provides a useful basis
-for analyzing complex AC circuits.  We will have more to say about
-phasors in later labs.
+$V_R(t)$ and $V_C(t)$ compared to $V_s(t)$.  These vectors are called
+\textit{phasors}, and phasor analysis provides a useful basis for
+analyzing complex AC circuits.  We will have more to say about phasors
+in later labs.
 
 \section{Procedures}
 \label{sec:procedures}
