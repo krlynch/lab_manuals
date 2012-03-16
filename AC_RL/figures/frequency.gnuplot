@@ -2,7 +2,7 @@ set terminal postscript eps enhanced color
 set output 'frequency-amplitudes.eps'
 set size 0.6,0.6
 set title "Voltage/current amplitude schematic"
-set xlabel "{/Symbol w} [1/RC]"
+set xlabel "{/Symbol w} [R/L]"
 set ylabel "V(t)/V_s"
 set xrange [0:5]
 set key center right
