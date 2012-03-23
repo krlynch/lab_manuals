@@ -1,0 +1,255 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{calc}
+\usepackage{units}
+\usepackage{graphicx}
+\usepackage[pdftex]{hyperref}
+\usepackage{subfig}
+\usepackage[margin=1in]{geometry}
+\usepackage{listings}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{bm}
+\usepackage{paralist}
+\usepackage[draft]{fixme}
+\usepackage{textcomp}
+\usepackage{yorkdefs}
+
+\newcommand{\halflife}{\ensuremath{T_{\nicefrac{1}{2}}}\xspace}
+
+\hypersetup{
+  breaklinks=true,
+  pdftitle={Alternating Current RLC Circuits},
+  pdfauthor={Kevin R. Lynch based on a lab by D.C.Jain}, 
+  pdfsubject={Phyiscs, Electricity and magnetism},
+  pdfkeywords={resistance, inductance, capacitance, alternating current},
+  pdflang={en-US},
+}
+
+\title{Alternating Current RLC Circuits}
+\author{}
+%Kevin R. Lynch, based on an earlier lab by D.C.Jain
+%\date{2012-03-20}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Objectives}
+\label{sec:objectives}
+
+\begin{enumerate}
+\item To understand the voltage/current phase behavior of RLC circuits
+  under applied alternating current voltages,
+\item To understand the current amplitude behavior of RLC circuits
+  under applied alternating current voltages, and
+\item To understand the phenomenon of resonance in RLC circuits.
+\end{enumerate}
+
+\section{Introduction}
+\label{sec:introduction}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=2\textwidth/3]{figures/rlc-circuit}
+  \caption{The RLC circuit.}
+  \label{fig:rlccircuit}
+\end{figure}
+In previous labs\footnote{\textit{Alternating Current RC Circuits}
+  and \textit{Alternating Current RL Circuits}} you studied the
+behavior of the RC and RL circuits under alternating applied (or AC)
+voltages.  Here, you will study the behavior of a similar circuit
+containing series connected capacitor, inductor, and resistor; see
+Figure~\ref{fig:rlccircuit}.
+
+\section{Theory}
+\label{sec:theory}
+
+Once again, let's analyze this circuit using Kirchoff's Rules.  As
+always, you find
+\begin{gather*}
+  V_s(t) - V_R(t) - V_L(t) - V_C(t) = 0\ ,
+\end{gather*}
+leading to a differential equation we have not encountered in these
+labs before
+\fixme{Fix the DiffEq.}
+\begin{gather*}
+  \deriv{I(t)}{t} + \frac{R}{L} I(t) = \frac{V_s(t)}{L}\ .
+\end{gather*}
+
+We will not solve solve this equation, as the derivation is beyond the
+mathematics level of this course; however, in
+Appendix~\ref{sec:solutions} we quote some important results.  For a
+sinusoidally varying source voltage
+\begin{gather*}
+  V_s(t) = V_s \cos\omega t\ ,
+\end{gather*}
+we find the current is again out of phase, but this time, whether the
+current lags or leads the applied voltage depends on whether the
+inductive or capacitive reactances (both defined as before) dominate
+the behavior of the circuit at the driving voltage.  \fixme{Need some
+  solutions!}
+\begin{gather*}
+  I(t) = \\
+  V_R(t) = \\
+  V_L(t) = \\
+  V_C(t) = 
+\end{gather*}
+where the phase is given by 
+\begin{gather*}
+  \tan \phi = \frac{X_L - X_C}{R}\ .
+\end{gather*}
+
+The circuit impedance is given by
+\begin{gather*}
+  Z^2 = R^2 + \left(X_L-X_C\right)^2\ ,
+\end{gather*}
+which has all the same consequences for the voltage amplitudes as it
+did for the $RC$ and $RL$ circuits.
+
+\fixme{Need to rethink these }
+\begin{figure}
+  \centering
+  \subfloat[][Phases]{
+%    \includegraphics[width=\textwidth/2-0.1in]{figures/frequency-phase}
+  }
+  \subfloat[][Voltage Amplitudes]{
+%    \includegraphics[width=\textwidth/2-0.1in]{figures/frequency-amplitudes}
+  }
+  \caption{The phase angle as a function of angular frequency is on
+    the left, while the voltage amplitudes are displayed on the
+    right.  In both cases, the frequency is normalized in units of
+    $L/R$.  The phase is normalized to $\pi/2$, while the amplitudes
+    are normalized to $V_s$.}
+  \label{fig:frequency}
+\end{figure}
+Just as we did for the RC and RL circuits, we should consider the behavior of
+the RLC circuit as a function of frequency \ldots and we're in for
+some new surprises.\fixme{What are they?  Talk about Q!  XY mode}  
+
+\section{Procedures}
+\label{sec:procedures}
+
+You should receive two multimeters (one of which should be a
+BK-5460), an oscilloscope, a function generator, a
+decade resistance box, a decade capacitance box, and an inductor.
+
+\begin{enumerate}
+\item First, select component values for testing.  Select a frequency
+  between \unit[300]{Hz} and \unit[600]{Hz}, and a value for $C$
+  between $\unit[0.06]{\mu F}$ and $\unit[0.1]{\mu F}$.  Calculate $X
+  = \left| X_L-X_C \right|$ and choose a value for $R \approx 1.2 X$.
+  Measure and record the values of $R$, the inductor resistance $R'$,
+  and $C$.  Record the value of the inductance.
+\item Configure the circuit for testing shown in
+  Figure~\ref{fig:rlccircuit}.  Insert the Simpson multimeter to
+  record the AC current.
+\item Using the BK Precision meter, record the frequency $f$, and the
+  RMS AC voltages across the signal generator $V_s$, the resistor
+  $V_R$, the capacitor $V_C$, and the inductor $V_L$.  Are these
+  values consistent?
+\item \label{item:phase} Measure the phase shift between the current
+  and applied voltage for your chosen frequency.  Connect the
+  oscilloscope so as to measure the voltage across the resistor and
+  signal generator; make sure the negtive inputs share a common
+  reference point.  Make sure the two signal baselines are centered
+  with respect to the horizontal and vertical axes of the
+  oscilloscope, and adjust the voltage and time scales so that
+  slightly more than one cycle of both waveforms is visible.  Measure
+  the phase shift as you did in the previous lab.  Increase the
+  frequency by 50\%, and determine the phase shift again.  Half the
+  initial frequency, and repeat.
+\item \label{item:resonance} Next, find the resonant frequency.
+  First, predict the value.  Then, go searching for it experimentally.
+  There are three methods to do this:
+  \begin{enumerate}
+  \item Find the frequency which maximizes the current, 
+  \item Find the frequency which eliminates the phase shift in AB
+    mode, and
+  \item Find the frequency which collapses the XY mode Lissajous
+    figure to a line.
+  \end{enumerate}
+  In an ideal world each method should give the same result, although
+  the last method is both easiest and most accurate.  Do they, in
+  fact, produce the same result?
+\item \label{item:current} Next, map out the amplitude of the current
+  response.  Without changing $R$ or $C$, vary the frequency over, say, ten
+  points, and record the frequency, RMS voltage $V_s$ and RMS current
+  $I$ at those points.  The low frequency should be half the
+  resonance, the high frequency should be twice the resonance, and the
+  middle point should be at the resonance.
+\end{enumerate}
+
+\appendix
+
+\section{Derivation of Solutions}
+\label{sec:solutions}
+
+\fixme{Write this section}
+
+\newpage
+
+\section*{Pre-Lab Exercises}
+
+Answer these questions as instructed on Blackboard; make sure to
+submit them before your lab session!
+
+\fixme{Need new pre-lab exercises}
+\begin{enumerate}
+\item Calculate the reactance of a $\unit[7]{H}$ capacitor at a
+  frequency of \unit[250]{Hz}.
+% 11 kOhm
+\item If an RL circuit has a $\unit[50]{\Omega}$ resistor in series
+  with a $\unit[7]{m H}$ inductor, what will its impedance be at
+  \unit[500]{Hz}?
+% 54.6 Ohm
+\item An RL circuit has a $\unit[5]{k\Omega}$ resistor and a
+  $\unit[1]{H}$ inductor.  At what frequency will the current
+  lag the voltage by $\pi/4$?
+% 800 Hz
+\item An RL circuit has a $\unit[5]{k\Omega}$ resistor and a
+  $\unit[1]{m H}$ inductor.  This circuit is driven by a
+  \unit[100]{Hz} sine wave with \unit[1]{V} amplitude.  What is the
+  amplitude of the current in the circuit?
+% 0.20 mA
+\end{enumerate}
+
+\newpage
+
+\section*{Post-Lab Exercises}
+
+\fixme{need new post-lab exercises}
+\begin{enumerate}
+\item From your recorded inductance, and measured resistance,
+  capacitance, and frequency, determine the reactance and impedance of
+  your circuit.  Make sure to estimate your uncertainties.  Determine
+  the impedance experimentally via another method, taking care of the
+  uncertaintites.% V_s/I
+  Do you get the same results?
+\item Estimate the uncertainties on the measured values of $V_s$,
+  $V_L$, $V_C$, and $V_R$.  Are these values consistent with each
+  other?  Explain what you mean by ``consistent''.
+\item Describe qualitatively what happens to your signals when you
+  vary the frequency around the resonance.
+\item From your measurements in Step~\ref{item:phase} of the
+  procedure, determine the phase shift at each of the three measured
+  frequencies, including an estimate of the uncertainty.  How do these
+  compare to the theoretical predictions? 
+\item Are your three measurements of the resonance frequency
+  consistent with each other?  With the prediction?
+\item Is your data from Step~\ref{item:current} consistent with the
+  predictions of theory?  Specifically, do the voltage and current
+  amplitudes measured by oscilloscope and by multimeter match, within
+  uncertainties, and do they comport with theoretical expectations?
+\item Discuss briefly whether you have met the objectives of the lab
+  exercises.
+\end{enumerate}
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
