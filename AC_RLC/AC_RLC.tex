@@ -119,15 +119,51 @@ where the phase is given by
   \tan \delta = \frac{\omega_0^2-\omega^2}{2\beta\omega}\ .
 \end{gather*}
 
-The circuit impedance is given by
+\fixme{Lissajous plot}
+\begin{figure}
+  \centering
+  \subfloat[][90\textdegree Phase]{
+    \includegraphics[width=\textwidth/3-0.1in]{figures/lissajous-90}
+  }
+  \subfloat[][45\textdegree Phase]{
+    \includegraphics[width=\textwidth/3-0.1in]{figures/lissajous-45}
+  }
+  \subfloat[][1\textdegree Phase]{
+    \includegraphics[width=\textwidth/3-0.1in]{figures/lissajous-1}
+  }
+  \caption{Three example plots for the XY mode of the oscilloscope.
+    In each plot, I show $V_R(t)$ versus $V_s(t)$; the frequencies of
+    the two signals are the same, while the amplitude of $V_R(t)$ is
+    smaller than $V_s(t)$.  On the left, they are 90\textdegree out of
+    phase; in the middle, 45\textdegree; on the right, they are one
+    degree out of phase.}
+  \label{fig:lissajous}
+\end{figure}
+One useful tool for the study of two equifrequency signals is the XY
+mode of the oscilloscope.  In the standard mode of the oscilloscope,
+you can think of the display as a standard plot of the signal, with
+the independent variable ($t$) on the horizontal axis, and the
+dependent variable ($V(t)$) on the vertical axis.  The XY mode can be
+thought of as a parametric plot, where the independent variable ($t$)
+is implicit (not displayed), while the horizontal and vertical axes
+trace out two different dependent variables ($V_1(t)$ and $V_2(t)$).
+The XY mode is most useful when the two signals have commensurate
+frequencies (their ratio is rational), particularly when their
+frequencies are the same.  In these cases, the XY signals give both
+relative frequency and relative phase information in an easy to
+interpret manner; such plots are called \textit{Lissajous
+  Figures}. Figure~\ref{fig:lissajous} shows a few of these plots.
+
+Just as in the RC and RL settings, we can define a circuit impedance
+is given by
 \begin{gather*}
   Z^2 = R^2 + \left(X_L-X_C\right)^2\ ,
 \end{gather*}
-which has all the same consequences for the voltage amplitudes as it
-did for the $RC$ and $RL$ circuits.  We could rewrite these equations
-in terms of these reactances (that's mostly left to you; see the
-Pre-Lab exercises), but here we'll only discuss the phase.  You can
-show
+which has all the same consequences for the relationships between
+the voltage amplitudes as it did for the $RC$ and $RL$ circuits.  We
+could rewrite these equations in terms of these reactances (that's
+mostly left to you; see the Pre-Lab exercises), but here we'll only
+discuss the phase.  You can show
 \begin{gather*}
   \tan \delta = \frac{X_L - X_C}{R}\ .
 \end{gather*}
@@ -150,15 +186,19 @@ show
 \end{figure}
 Just as we did for the RC and RL circuits, we should consider the
 behavior of the RLC circuit as a function of frequency \ldots and
-we're in for some new surprises. Consider first the phase.  Notice
-that $\delta=0$ when $X_L = X_C$.  This is called the \textit{phase
-  resonance} of the circuit.  At what frequency does this happen?
+we're in for some new surprises, with very rich and interesting
+phenomenology. Consider first the phase.  Notice that $\delta=0$ when
+$X_L = X_C$.  This is called the \textit{phase resonance} of the
+circuit.  At what frequency does this happen?
 \begin{gather*}
   X_L = X_C = \omega_R L = \frac{1}{\omega_R C} \longrightarrow
   \omega_R = \frac{1}{\sqrt{LC}} = \omega_0\ .
 \end{gather*}
-This is called the \textit{natural} frequency of the circuit.  
-
+This is called the \textit{natural} frequency of the circuit.  Where
+$X_L$ dominates $X_C$, the current lags the drive voltages, while the
+current leads the drive voltage in the opposite case.  Thus, the phase
+can vary between $-\pi/2$ and $\pi/2$, depending on the values of the
+circuit components.
 
 There are a number of other resonances for this circuit.  We can, for
 instance, also look for the maxima of the voltage amplitudes, the so
@@ -356,7 +396,8 @@ Substituting these values, you will obtain the coefficient $D$
 Answer these questions as instructed on Blackboard; make sure to
 submit them before your lab session!
 
-\fixme{Need new pre-lab exercises}
+\fixme{Need new pre-lab exercises: derive the relationship between the
+voltage amplitudes for the RLC circuit}
 \begin{enumerate}
 \item Calculate the reactance of a $\unit[7]{H}$ capacitor at a
   frequency of \unit[250]{Hz}.
