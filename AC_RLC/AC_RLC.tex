@@ -30,7 +30,7 @@
 \title{Alternating Current RLC Circuits}
 \author{}
 %Kevin R. Lynch, based on an earlier lab by D.C.Jain
-%\date{2012-03-20}
+%\date{2012-03-23}
 \date{}
 
 \begin{document}
@@ -57,11 +57,12 @@
   \caption{The RLC circuit.}
   \label{fig:rlccircuit}
 \end{figure}
-In previous labs\footnote{\textit{Alternating Current RC Circuits}
-  and \textit{Alternating Current RL Circuits}} you studied the
-behavior of the RC and RL circuits under alternating applied (or AC)
-voltages.  Here, you will study the behavior of a similar circuit
-containing series connected capacitor, inductor, and resistor; see
+In previous labs\footnote{\textit{Alternating Current RC Circuits} and
+  \textit{Alternating Current RL Circuits}} you studied the behavior
+of the RC and RL circuits under alternating applied (or AC) voltages.
+Here, you will study the behavior of a similar circuit containing
+series connected capacitor, inductor, and resistor.  This is, quite
+reasonably, called an \textit{RLC Circuit}; see
 Figure~\ref{fig:rlccircuit}.
 
 \section{Theory}
@@ -76,12 +77,12 @@ leading to a differential equation we have not encountered in these
 labs before
 \begin{gather*}
   \deriv[2]{q(t)}{t} + \frac{R}{L} \deriv{q(t)}{t} + \frac{1}{LC} q(t)
-  = V_s(t)\ .
+  = V_s(t)\ ,
 \end{gather*}
-We will not actually solve this equation, as the derivation is beyond
-the mathematics level of this course; however, in
-Appendix~\ref{sec:solutions} we quote some important results.  For a
-sinusoidally varying source voltage
+where $q(t)$ is the charge on the capacitor.  We will not actually
+solve this equation, as the derivation is beyond the mathematics level
+of this course; however, in Appendix~\ref{sec:solutions} we quote some
+important results.  For a sinusoidally varying source voltage
 \begin{gather*}
   V_s(t) = V_s \cos\omega t\ ,
 \end{gather*}
@@ -119,7 +120,6 @@ where the phase is given by
   \tan \delta = \frac{\omega_0^2-\omega^2}{2\beta\omega}\ .
 \end{gather*}
 
-\fixme{Lissajous plot}
 \begin{figure}
   \centering
   \subfloat[][90\textdegree Phase]{
@@ -142,46 +142,60 @@ where the phase is given by
 One useful tool for the study of two equifrequency signals is the XY
 mode of the oscilloscope.  In the standard mode of the oscilloscope,
 you can think of the display as a standard plot of the signal, with
-the independent variable ($t$) on the horizontal axis, and the
-dependent variable ($V(t)$) on the vertical axis.  The XY mode can be
-thought of as a parametric plot, where the independent variable ($t$)
+the independent variable, $t$, on the horizontal axis, and the
+dependent variable, $V(t)$, on the vertical axis.  The XY mode can be
+thought of as a parametric plot, where the independent variable, $t$,
 is implicit (not displayed), while the horizontal and vertical axes
-trace out two different dependent variables ($V_1(t)$ and $V_2(t)$).
+trace out two different dependent variables, $V_1(t)$ and $V_2(t)$.
 The XY mode is most useful when the two signals have commensurate
 frequencies (their ratio is rational), particularly when their
 frequencies are the same.  In these cases, the XY signals give both
 relative frequency and relative phase information in an easy to
 interpret manner; such plots are called \textit{Lissajous
   Figures}. Figure~\ref{fig:lissajous} shows a few of these plots.
+When the two signals have the same frequency, the figure traces an
+ellipse.  The major axis of the ellipse rotates, and the minor axis
+shrinks, as the phase changes.  As the phase approaches 0, the minor
+axis also vanishes.
 
 Just as in the RC and RL settings, we can define a circuit impedance
-is given by
+by
 \begin{gather*}
   Z^2 = R^2 + \left(X_L-X_C\right)^2\ ,
 \end{gather*}
-which has all the same consequences for the relationships between
-the voltage amplitudes as it did for the $RC$ and $RL$ circuits.  We
-could rewrite these equations in terms of these reactances (that's
-mostly left to you; see the Pre-Lab exercises), but here we'll only
-discuss the phase.  You can show
+which has all the same consequences for the relationships between the
+voltage amplitudes as it did for the $RC$ and $RL$ circuits.  We could
+rewrite this equation in terms of the voltage amplitudes (that's
+mostly left to you; see the Pre-Lab exercises); here we'll only note
+the phase.  You can show
 \begin{gather*}
   \tan \delta = \frac{X_L - X_C}{R}\ .
 \end{gather*}
 
-\fixme{Need to rethink these }
 \begin{figure}
   \centering
   \subfloat[][Phases]{
-%    \includegraphics[width=\textwidth/2-0.1in]{figures/frequency-phase}
+    \includegraphics[width=\textwidth/2-0.1in]{figures/frequency-phase}
   }
-  \subfloat[][Voltage Amplitudes]{
-%    \includegraphics[width=\textwidth/2-0.1in]{figures/frequency-amplitudes}
+  \subfloat[][Resistor voltage amplitude]{
+    \includegraphics[width=\textwidth/2-0.1in]{figures/frequency-amplitudes}
+  }\\
+  \subfloat[][Capacitor voltage amplitude]{
+    \includegraphics[width=\textwidth/2-0.1in]{figures/frequency-cap}
+  }
+  \subfloat[][Inductor voltage amplitude]{
+    \includegraphics[width=\textwidth/2-0.1in]{figures/frequency-ind}
   }
   \caption{The phase angle as a function of angular frequency is on
-    the left, while the voltage amplitudes are displayed on the right.
-    In both cases, the frequency is normalized in units of $\omega_0 =
-    1/\sqrt{LC}$.  The phase is normalized to $\pi/2$, while the
-    amplitudes are normalized to $V_s$.}
+    the upper left.  The resistor voltage/current amplitudes are
+    displayed on the upper right.  The lower left shows the capacitor
+    voltage amplitude, while the lower right shows the inductor
+    voltage amplitude.  In all cases, the frequency is normalized in
+    units of $\omega_0 = 1/\sqrt{LC}$.  Because the phase and
+    amplitudes are also a function of $2\beta = R/L$, we plot families
+    of curves for various values of $2\beta/\omega_0$.  The phase is
+    normalized to $\pi/2$, while the amplitudes are normalized to
+    $V_s$.}
   \label{fig:frequency}
 \end{figure}
 Just as we did for the RC and RL circuits, we should consider the
@@ -189,7 +203,7 @@ behavior of the RLC circuit as a function of frequency \ldots and
 we're in for some new surprises, with very rich and interesting
 phenomenology. Consider first the phase.  Notice that $\delta=0$ when
 $X_L = X_C$.  This is called the \textit{phase resonance} of the
-circuit.  At what frequency does this happen?
+circuit.  At what frequency, $\omega_R$, does this happen?
 \begin{gather*}
   X_L = X_C = \omega_R L = \frac{1}{\omega_R C} \longrightarrow
   \omega_R = \frac{1}{\sqrt{LC}} = \omega_0\ .
@@ -201,11 +215,12 @@ can vary between $-\pi/2$ and $\pi/2$, depending on the values of the
 circuit components.
 
 There are a number of other resonances for this circuit.  We can, for
-instance, also look for the maxima of the voltage amplitudes, the so
-called \textit{amplitude resonances} of the circuit.  To predict
-these, we extremize the amplitudes versus the frequencies
-($\deriv{A(t)}{\omega} = 0$).  Clearly the current and the voltage
-across the resistor will be maximized at the same frequency:
+instance, look for the maxima of the voltage amplitudes, the so called
+\textit{amplitude resonances} of the circuit; see
+Figure~\ref{fig:frequency}.  To predict these, we extremize the
+amplitudes versus the frequencies ($\deriv{A(\omega)}{\omega} = 0$).
+Clearly the current and the voltage across the resistor will be
+maximized at the same frequency:
 \begin{gather*}
   \left.\deriv{V_R(\omega)}{\omega}\right|_{\omega_R} = 0
   \longrightarrow \omega_R = \omega_0\ ,
@@ -242,10 +257,11 @@ decade resistance box, a decade capacitance box, and an inductor.
 \begin{enumerate}
 \item First, select component values for testing.  Select a frequency
   between \unit[300]{Hz} and \unit[600]{Hz}, and a value for $C$
-  between $\unit[0.06]{\mu F}$ and $\unit[0.1]{\mu F}$.  Calculate $X
-  = \left| X_L-X_C \right|$ and choose a value for $R \approx 1.2 X$.
-  Measure and record the values of $R$, the inductor resistance $R'$,
-  and $C$.  Record the value of the inductance.
+  between $\unit[0.06]{\mu F}$ and $\unit[0.1]{\mu F}$.  Record the
+  value of the inductance, $L$.  Measure and record the values of the
+  inductor resistance $R'$, and $C$.  Calculate $X = \left| X_L-X_C
+  \right|$ and choose a value for $R + R' \approx 1.2 X$.  Set,
+  measure and record $R$.
 \item Configure the circuit for testing shown in
   Figure~\ref{fig:rlccircuit}.  Insert the Simpson multimeter to
   record the AC current.
@@ -262,29 +278,36 @@ decade resistance box, a decade capacitance box, and an inductor.
   oscilloscope, and adjust the voltage and time scales so that
   slightly more than one cycle of both waveforms is visible.  Measure
   the phase shift as you did in the previous lab.  Increase the
-  frequency by 50\%, and determine the phase shift again.  Half the
+  frequency by 50\%, and determine the phase shift again.  Halve the
   initial frequency, and repeat.
 \item \label{item:phase_resonance} Next, find the resonant frequency.
   First, predict the value.  Then, go searching for it experimentally.
   There are three methods to do this:
   \begin{enumerate}
-  \item Find the frequency which maximizes the current, 
+  \item Find the frequency which maximizes the current (or the voltage
+    across the resistor), 
   \item Find the frequency which eliminates the phase shift in AB
-    mode, and
+    mode, or
   \item Find the frequency which collapses the XY mode Lissajous
     figure to a line.
   \end{enumerate}
   In an ideal world each method should give the same result, although
-  the last method is both easiest and most accurate.  Do they, in
-  fact, produce the same result?
-\item \label{item:amplitude_resonance} \fixme{Search for amplitude
-    resonances of VC and VL}
-\item \label{item:current_response} Next, map out the amplitude of the current
-  response.  Without changing $R$ or $C$, vary the frequency over, say, ten
-  points, and record the frequency, RMS voltage $V_s$ and RMS current
-  $I$ at those points.  The low frequency should be half the
-  resonance, the high frequency should be twice the resonance, and the
-  middle point should be at the resonance.
+  the last method is both easiest and most accurate.  Do all three
+  methods, in fact, produce the same result?
+\item \label{item:current_response} Next, map out the amplitude of the
+  current response.  Without changing $R$ or $C$, vary the frequency
+  over, say, ten points, and record the frequency, RMS voltage $V_s$
+  and RMS current $I$ at those points.  The low frequency should be
+  about half the phase resonance, the high frequency should be about
+  twice the phase resonance, and the middle point should be at the
+  phase resonance.
+\item \label{item:amplitude_resonance} Finally, let's search for the
+  amplitude resonances of $V_C(t)$ and $V_L(t)$.  Without changing
+  $C$, set $R+R'=0.4X$.\footnote{Why do we have to change $R$?}
+  Confirm that the phase resonance has the same frequency.  Predict
+  the frequencies of both amplitude resonances.  Using either the
+  multimeter or the oscilloscope, search for the amplitude resonances.
+  Do they match your prediction?
 \end{enumerate}
 
 \appendix
@@ -300,8 +323,8 @@ equations.  In fact, solving the equation is somewhat beyond the level
 of the prerequisite mathematics for this course, so we'll just quote
 the solution here.\footnote{Although you can look up the solution
   methods on the net, or in any standard sophomore level physics or
-  mathematics text.  I take the notation and solutions from Marion and
-  Thornton's \textit{Classical Dynamics}.}
+  mathematics text.  I take the notation from Marion and Thornton's
+  \textit{Classical Dynamics}.}
 
 Let's write the differential equation in the form
 \begin{gather*}
@@ -326,15 +349,15 @@ we're looking for here.  In our specific problem, the solution to the
 differential equation is the charge on the capacitor, but the physics
 we're interested in is the phase difference between the
 \textit{current} and the drive voltage.  Thus, we want a current that
-is of the same functional form as the drive voltage.  Since we choose
-a drive voltage that is a $\cos$, and current is the derivative of the
-charge, we want to choose a steady state (particular) solution of the
-form
+is of the same functional form as the drive voltage, plus a phase
+offset.  Since we choose a drive voltage that is a cosine, and current
+is the derivative of the charge, we want to choose a steady state
+(particular) solution of the form
 \begin{gather*}
   q_p(t) = D \sin\left( \omega t + \delta \right)\ .
 \end{gather*}
 To show this is a solution, we need to find $D$ and $\delta$, which we
-do by substituting into the differential equation, and we obtain
+do by substituting into the differential equation, to obtain
 \begin{gather*}
   -D\omega^2 \sin\left(\omega t + \delta\right) + 2\beta D\omega
   \cos\left(\omega t + \delta\right) + D\omega_0^2 \sin\left(\omega t
@@ -396,38 +419,33 @@ Substituting these values, you will obtain the coefficient $D$
 Answer these questions as instructed on Blackboard; make sure to
 submit them before your lab session!
 
-\fixme{Need new pre-lab exercises: derive the relationship between the
-voltage amplitudes for the RLC circuit}
 \begin{enumerate}
-\item Calculate the reactance of a $\unit[7]{H}$ capacitor at a
-  frequency of \unit[250]{Hz}.
-% 11 kOhm
-\item If an RL circuit has a $\unit[50]{\Omega}$ resistor in series
-  with a $\unit[7]{m H}$ inductor, what will its impedance be at
-  \unit[500]{Hz}?
-% 54.6 Ohm
-\item An RL circuit has a $\unit[5]{k\Omega}$ resistor and a
-  $\unit[1]{H}$ inductor.  At what frequency will the current
-  lag the voltage by $\pi/4$?
-% 800 Hz
-\item An RL circuit has a $\unit[5]{k\Omega}$ resistor and a
-  $\unit[1]{m H}$ inductor.  This circuit is driven by a
-  \unit[100]{Hz} sine wave with \unit[1]{V} amplitude.  What is the
-  amplitude of the current in the circuit?
-% 0.20 mA
+\item Derive a relationship between the voltage amplitudes $V_s$,
+  $V_R$, $V_C$, and $V_L$ for the RLC circuit.  Hint: how is $V_s$
+  related to the impedance?
+\item A series RLC circuit is driven at \unit[500]{Hz} by a sine wave
+  generator.  It has parameters $R=\unit[5]{k\Omega}$, $L =
+  \unit[2]{H}$, and $C = \unit[2]{\mu F}$.  What is the impedance of
+  the circuit?
+\item What is the phase resonance frequency for the circuit in the
+  previous question?
+\item Does this circuit have amplitude resonances?  If so, what are
+  their frequencies?
+\item If you use instead a $\unit[0.08]{\mu F}$ capacitor, does the
+  circuit have amplitude resonances?  If so, what are their
+  frequencies?  What is the new phase resonance?
 \end{enumerate}
 
 \newpage
 
 \section*{Post-Lab Exercises}
 
-\fixme{need new post-lab exercises}
 \begin{enumerate}
 \item From your recorded inductance, and the measured resistance,
-  capacitance, and initial frequency, determine the reactance and
+  capacitance, inductance, and initial frequency, determine the
   impedance of your circuit.  Make sure to estimate your
   uncertainties.  Determine the impedance experimentally via another
-  method, taking care of the uncertaintites.% V_s/I
+  method, taking care of the uncertaintites. % V_s/I
   Do you get the same results?
 \item Estimate the uncertainties on the measured values of $V_s$,
   $V_L$, $V_C$, and $V_R$.  Are these values consistent with each
@@ -436,15 +454,20 @@ voltage amplitudes for the RLC circuit}
   procedure, determine the phase shift at each of the three measured
   frequencies, including an estimate of the uncertainty.  How do these
   compare to the theoretical predictions? 
-\item Are your three measurements of the phase resonance frequency
-  consistent with each other?  With the prediction?  
+\item Are your three measurements of the phase resonance frequency in
+  Step~\ref{item:phase_resonance} consistent with each other?  With
+  theoretical prediction?
 \item Describe qualitatively what happens to your signals when you
   vary the frequency around the phase resonance.
-\item \fixme{Amplitude resonances?}
-\item Is your data from Step~\ref{item:current_response} consistent with the
-  predictions of theory?  Specifically, do the voltage and current
-  amplitudes measured by oscilloscope and by multimeter match, within
-  uncertainties, and do they comport with theoretical expectations?
+\item Is your data from Step~\ref{item:current_response} consistent
+  with the predictions of theory?  Specifically, do the voltage and
+  current amplitudes measured by oscilloscope and by multimeter match,
+  within uncertainties, and do they comport with theoretical
+  expectations?
+\item Why did you have to change the resistance value for
+  Step~\ref{item:amplitude_resonance}?  Did you find the amplitude
+  resonances?  If so, do their values agree with your theoretical
+  predictions?
 \item Discuss briefly whether you have met the objectives of the lab
   exercises.
 \end{enumerate}
