@@ -70,11 +70,12 @@ source.
 \section{Theory}
 \label{sec:theory}
 
-\fixme{Draw the picture}
 \begin{figure}
   \centering
-  
-  \caption{Caption Here}
+\includegraphics[width=2\textwidth/3]{figures/definitions}  
+  \caption{The relationship between the two light sources, \Sone and
+    \Stwo, and the screen $OP$, along with definitions of the various
+    distances quoted in the text.}
   \label{fig:sources}
 \end{figure}
 
@@ -133,7 +134,27 @@ you should find for the maxima
 \label{eq:grating}
 \end{gather}
 
-\fixme{Why a grating? Define grating element}
+With only two coherent sources, the pattern on the screen will vary
+smoothly from one bright peak to the next dim valley to the next
+bright peak; in other words, we won't just see very bright peaks with
+no light in between them.  If, however, we were to add another pair of
+sources, we would still get bright peaks according to
+Equation~\eqref{eq:grating}, but the spaces in between would be darker
+than in the two source case.  If we keep adding sources until we have
+a very large number of them, we would \textit{still} find that we have
+bright peaks according to Equation~\eqref{eq:grating}, but essentially
+no light between those peaks; destructive interference between all
+the additional sources would essentially cancel all the light.
+
+So, how do we obtain a large number of coherent sources?  We don't.
+Instead, we obtain a \textit{single} source, and we place an opaque
+layer of material between it and the screen.  Then, we cut a series of
+very fine, closely and regularly spaced, parallel lines through the
+opaque material.  At each slit, the light will emerge \textit{as if}
+is was emerging from an independent source.  The object we would have
+constructed is called a \textit{diffraction grating}, and the spacing
+between the \textit{line} of the grating is called the \textit{grating
+  element}, or line spacing, $d$.
 
 \section{Procedures}
 \label{sec:procedures}
@@ -141,7 +162,7 @@ you should find for the maxima
 In the lab, there will be a number of gas discharge tubes, a
 Helium-Neon laser, diffraction gratings, measuring equipment, and
 various mounts and stands.  First, you'll use a Helium-Neon laser,
-which operates at a well known wavelength, to determine the element
+which operates at a well known wavelength, to determine the line
 spacing for your grating.  Then, you'll use the grating to determine
 the emission wavelengths for a number of elements in gas discharge
 tubes. 
@@ -178,10 +199,10 @@ excites Helium atoms to a set of long lived, metastable excited
 states; collisional interactions transfer this energy to the Neon
 atoms, exciting some of their electrons to the $^3s_2$ level.  These
 transition to the $^2p_4$ state, emitting in the process a photon
-whose wavelength in air at STP is
-\unit[632.816]{nm}.\footnote{\unit[632.991]{nm} in vacuum.  Data
-  gleaned from wikipedia.}  This is right in the middle of the red
-band of the optical spectrum.  
+whose wavelength in air at STP is \unit[632.816]{nm}.\footnote{The
+  emitted wavelength is \unit[632.991]{nm} in vacuum.  Data gleaned
+  from wikipedia.}  This is right in the middle of the red band of the
+optical spectrum.
 
 When we shine the laser through the grating, a single diffraction
 pattern will form on the screen.  Since we can accurately measure the
@@ -254,7 +275,10 @@ In contrast, we will study pure gasses in this lab, which will show us
 the behavior of specific atomic species.  Some of these emission lines
 are in the optical region of the spectrum.  Since these emission lines
 contain a vary narrow range of wavelengths, we can use a diffraction
-grating to determine the wavelengths of these lines.
+grating to determine the wavelengths of these lines.  Different color
+light (different wavelengths) will be diffracted through different
+angles, much like in a prism.  How does the ordering of colors compare
+with those in a prism?
 
 \begin{quote}
   \textbf{\textit{DISCHARGE TUBE SAFETY: These operate with a very
@@ -266,27 +290,18 @@ grating to determine the wavelengths of these lines.
       seconds; don't touch then until they have cooled down.}}
 \end{quote}
 
-\fixme{Draw the picture}
-\begin{figure}
-  \centering
-  
-  \caption{The equipment configuration used to determine the
-    wavelengths of gas discharge tubes.} 
-  \label{fig:discharge}
-\end{figure}
 Unlike the laser measurements made in the first two parts of the lab,
 the light from the discharge tubes is neither coherent, nor focused,
 and hence can't form an image on a screen or wall.  Instead, you will
 be using your personal optical measurement system (ie, your retina) as
-the screen.
+the screen.  This type of image is called a \textit{virtual} image.
 \begin{enumerate}
 \item Fix a meter stick in the horizontal, and set a discharge tube
   vertically at the midpoint of the stick, and as close to the stick
-  as possible; see Figure~\ref{fig:discharge}.  Mount the grating at a
-  suitable distance (something like \unit[50]{cm} should work) from
-  the meter stick, with the grating lines parallel to the length of
-  the discharge tube.  Make sure grating is parallel to both the meter
-  stick and the tube.
+  as possible.  Mount the grating at a suitable distance (something
+  like \unit[50]{cm} should work) from the meter stick, with the
+  grating lines parallel to the length of the discharge tube.  Make
+  sure grating is parallel to both the meter stick and the tube.
 \item Look through the grating towards the discharge tube; keep your
   eye as close to the grating as possible to eliminate parallax
   shifts.  Find the spectral lines, which will appear on both sides of
@@ -309,7 +324,18 @@ Answer these questions as instructed on Blackboard; make sure to
 submit them before your lab session!
 
 \begin{enumerate}
-\item Here's a question.
+\item Why is the zeroth order maximum the same color as the source?
+  For lines of a given order, are the red or violet lines on the
+  screen closer to the zeroth order maximum?
+\item What wavelength of light would produce a first order peak at
+  10\textdegree with a grating of $10^4$ lines per centimeter?
+% 17364nm
+\item A $\unit[340]{n m}$ wave with a grating of 5,000 lines per
+  centimeter produces its first order peak at what angle?
+% 9.8\textdegree
+\item Determine the grating element for a wavelength of
+  $\unit[500]{n m}$ to produce a second order peak at 15\textdegree.
+% 2500/cm, 4e-6m
 \end{enumerate}
 
 \newpage
