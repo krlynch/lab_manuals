@@ -39,9 +39,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="99.214286"
-     inkscape:cy="45.535712"
+     inkscape:zoom="3.959798"
+     inkscape:cx="234.93054"
+     inkscape:cy="154.8164"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -53,7 +53,8 @@
      fit-margin-top="0.5"
      fit-margin-right="0.5"
      fit-margin-bottom="0.5"
-     fit-margin-left="0.5">
+     fit-margin-left="0.5"
+     inkscape:snap-global="false">
     <inkscape:grid
        type="xygrid"
        id="grid2985"
@@ -70,7 +71,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -79,6 +80,19 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-109,-341.36218)">
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
+       x="206.47972"
+       y="446.23145"
+       id="text3952"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3958"
+         x="206.47972"
+         y="446.23145">Θ<tspan
+   style="font-size:65.00091553%;baseline-shift:sub"
+   id="tspan3988">1</tspan></tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        d="m 200,582.36218 100,-230 100,230"
@@ -86,25 +100,62 @@
        inkscape:connector-curvature="0" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
-       d="m 110,502.36218 150,-60 70,-10 180,40"
+       d="m 110,502.36218 150,-60 74.46429,-10.44643 L 510,472.36218"
        id="path3759"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:4, 4;stroke-dashoffset:0"
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1,4;stroke-dashoffset:0;marker-end:url(#Arrow2Lend)"
        d="m 260,442.36218 c 10,0 260,-100 260,-100"
        id="path4205"
        inkscape:connector-curvature="0" />
     <text
        xml:space="preserve"
        style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
-       x="400"
-       y="422.36218"
+       x="454"
+       y="418.61218"
        id="text4213"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan4217"
-         x="400"
-         y="422.36218"
+         x="454"
+         y="418.61218"
          style="font-size:28px">δ</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:3,3;stroke-dashoffset:0"
+       d="M 151.875,101 C 107.32143,82.428571 107.23214,82.428571 107.23214,82.428571"
+       id="path3946"
+       inkscape:connector-curvature="0"
+       transform="translate(109,341.36218)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:3,3;stroke-dashoffset:0"
+       d="m 225.44643,90.285714 c 36.78571,-15 36.78571,-15 36.78571,-15"
+       id="path3950"
+       inkscape:connector-curvature="0"
+       transform="translate(109,341.36218)" />
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
+       x="365.80844"
+       y="435.49084"
+       id="text3952-4"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3958-8"
+         x="365.80844"
+         y="435.49084">Θ<tspan
+   style="font-size:65.00091553%;baseline-shift:sub"
+   id="tspan3986">2</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
+       x="291.83762"
+       y="391.93573"
+       id="text3996"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4000"
+         x="291.83762"
+         y="391.93573">Φ</tspan></text>
   </g>
 </svg>

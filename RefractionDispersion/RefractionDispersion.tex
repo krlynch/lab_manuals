@@ -95,18 +95,22 @@ lists the indices for a number of other materials, some with $n>2$.
 \begin{figure}
   \centering
   \includegraphics[width=\textwidth/3]{figures/refraction}  
-  \caption{The definition of the incident and refracted angles.}
+  \caption{The definition of the incident and refracted angles.  Light
+    enters the interface at an angle $\theta_I$ with respect to the
+    normal to the surface, and leaves the interface at an angle
+    $\theta_R$.  If $\theta_I \neq \theta_R$, then the ray is said to
+    be refracted.}
   \label{fig:defs}
 \end{figure}
 The frequency of the wave train is simply the number of cycles per
-unit time that wave undergoes, and continuity requires that this value
-doesn't change at an interface between materials of different indices.
-The consequence is that the \textit{wavelength} of the wave must
-change across the boundary, and that can only happen if the wave
-changes direction!  Because the different components of the reflected
-and refracted waves must add up to the total incoming wave, you can
-find a relationship between the angles of the incident and refracted
-rays (defined in Figure~\ref{fig:defs})
+unit time, and continuity requires that this value doesn't change at
+an interface between materials of different indices.  As a consequence
+the \textit{wavelength} of the wave must change across the boundary,
+and that can only happen if the wave changes direction!  Because the
+different components of the reflected and refracted waves must add up
+to the total incoming wave, you can find a relationship between the
+angles of the incident and refracted rays (defined in
+Figure~\ref{fig:defs})
 \begin{gather*}
   \frac{\sin \theta_I}{\sin \theta_R} = \frac{v_I}{v_R}.
 \end{gather*}
@@ -114,10 +118,10 @@ Rewriting the $v_i$ in terms of the $n_i$ gives
 \begin{gather*}
   n_I \sin\theta_I = n_R \sin\theta_R\ ,
 \end{gather*}
-famously known as \textit{Snell's Law} of refraction.  When light
-slows down when crossing a boundary (low to high $n$), the rays bend
-towards the normal, and vice versa.  You will use Snell's Law to
-determine the speed of light in different materials.
+famously known as \textit{Snell's Law} of refraction.  If light slows
+down when crossing a boundary (a transition from low to high $n$), the
+rays bend towards the normal, and vice versa.  You will use Snell's
+Law to determine the speed of light in different materials.
 
 % Total Internal Reflection
 \begin{figure}
@@ -140,8 +144,8 @@ determine the speed of light in different materials.
   \label{fig:dispersion}
 \end{figure}
 
-While the discussion above has repeatedly talked about \textit{the
-  index of refraction} of a material, it turns out there really is no
+While the discussion above has repeatedly talked about \textit{the}
+index of refraction of a material, it turns out there really is no
 such thing: the index of refraction depends on the frequency of the
 light!  That is, we really have to replace relation $v = \lambda f$
 with
@@ -151,12 +155,12 @@ with
 This more complicated relationship is known as a \textit{dispersion
   relation}, and gives rise to frequency dependent refraction known as
 dispersion.  While the difference from a constant speed is usually
-very small (usually less than a percent across the optical
-frequencies, see Figure~\ref{fig:dispersion}), it has a host of very
-well known effects, the most interesting of which are the
-\textit{chromatic aberration} of camera systems, and the formation of
-rainbows (again, see Figure~\ref{fig:dispersion}).  You will also
-explore dispersion in this lab.
+very small (often less than a percent across the optical frequencies,
+see Figure~\ref{fig:dispersion}), it has a host of very well known
+consequences, the most interesting of which are the \textit{chromatic
+  aberration} of camera systems, and the formation of rainbows (again,
+see Figure~\ref{fig:dispersion}).  You will also explore dispersion in
+this lab.
 
 \section{Procedures}
 \label{sec:procedures}
@@ -172,11 +176,11 @@ experiments to measure refraction and dispersion in optical systems.
 In the first two measurements, you'll be using Snell's Law to
 determine the index of refraction of two acrylic objects.  Typically,
 these measurements in an undergraduate lab are taken with collimated
-white light sources.  Dispersion and divergence, however, complicate
-matters.  Instead, we will use monochromatic, non-divergent light
-sources: diode based laser pointers; the rays consist of a single
-wavelength with a very small beam spread.  You should be able to make
-excellent measurements with a modicum of care.
+white light sources, where dispersion and divergence conspire to
+complicate the measurements.  Instead, we will use monochromatic,
+non-divergent light sources: diode based laser pointers; the rays
+consist of a single wavelength with a very small beam spread.  You
+should be able to make excellent measurements with a modicum of care.
 
 \subsubsection{Acrylic Cube}
 \label{sec:cube}
@@ -209,7 +213,10 @@ measurements, by themselves they won't give you good enough results.
   \centering
   \includegraphics[width=\textwidth/2]{figures/prism}
   \caption{The angle of deviation, $\delta$, for a ray passing through
-  a prism.}
+    a prism.  Light enters the interface at an angle $\theta_1$ with
+    respect to the normal to the surface, and leaves the interface at
+    an angle $\theta_2$.  If $\theta_1 = \theta_2$, then $\delta$ is a
+    minimum.}
   \label{fig:prism}
 \end{figure}
 
@@ -227,7 +234,7 @@ occurs when the incoming and outgoing deflection angles are
 equal.\footnote{You could consider proving this\ldots} At this angle,
 the index of the prism material is given by
 \begin{gather*}
-  n = \frac{\sin\left(\frac{\Phi+\delta}{2}\right)}
+  n = \frac{\sin\left(\frac{\Phi+\delta_\mathrm{min}}{2}\right)}
   {\sin\left(\frac{\Phi}{2}\right)}\ ,
 \end{gather*}
 assuming the prism is in air.
@@ -258,17 +265,22 @@ Answer these questions as instructed on Blackboard; make sure to
 submit them before your lab session!
 
 \begin{enumerate}
-\item A ray hits an object at 15\textdegree from the vertical.  If the
+\item A ray hits an object at 15\textdegree\  from the vertical.  If the
   material has index of refraction 1.5, what is the refraction angle?
 % 9.9\textdegree
-\item If a ray is incident on a block of material at 15\textdegree
-  from the vertical, and is refracted to 8\textdegree from the
+\item If a ray is incident on a block of material at 15\textdegree\ 
+  from the vertical, and is refracted to 8\textdegree\  from the
   vertical, what is the index of refraction?
 % 1.86
 \item  A ray of light crosses from a flint glass slab at
-  20\textdegree from the normal into air.  At what angle does it
+  20\textdegree\  from the normal into air.  At what angle does it
   emerge? 
 % 35\textdegree
+\item A ray of light passes through a prism, making the minimum angle
+  of deviation.  The rays enter and emerge at 7\textdegree\ from the
+  normal to the surface.  What is the index of refraction of the
+  material, if the prism angle is 50\textdegree?
+% 1.1
 \end{enumerate}
 
 \newpage
