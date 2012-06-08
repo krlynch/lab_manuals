@@ -119,13 +119,13 @@ use Taylor's theorem, and expand each of the parenthesized factors
 After expanding the similar terms in both of the $\ell_i$, you should
 find
 \begin{align*}
-  \ell_1^2 & \ell^2 + L^2 - dy &
-  \ell_2^2 & \ell^2 + L^2 + dy \ .
+  \ell_1^2 &\approx \ell^2 + L^2 - dy &
+  \ell_2^2 &\approx \ell^2 + L^2 + dy \ .
 \end{align*}
 Taking the difference of these terms gives
 \begin{gather*}
-  \ell_2^2 - \ell_1^2 = \left( ell_2 - \ell_1 \right) \left( ell_2 +
-    \ell_1 \right) \approx \left( ell_2 - \ell_1 \right) 2 \ell = 2dy\ .
+  \ell_2^2 - \ell_1^2 = \left( \ell_2 - \ell_1 \right) \left( \ell_2 +
+    \ell_1 \right) \approx \left( \ell_2 - \ell_1 \right) 2 \ell = 2dy\ .
 \end{gather*}
 Divide both sides by $2\ell$, and substitute for the first term, and
 you should find for the maxima
@@ -198,12 +198,12 @@ essentially a gas discharge tube capped on each end with high
 efficiently mirrors; see Figure~\ref{fig:lasertube}.  The discharge
 excites Helium atoms to a set of long lived, metastable excited
 states; collisional interactions transfer this energy to the Neon
-atoms, exciting some of their electrons to the $^3s_2$ level.  These
-transition to the $^2p_4$ state, emitting in the process a photon
+atoms, exciting some of their electrons to the $^3S_2$ level.  These
+transition to the $^2P_4$ state, emitting in the process a photon
 whose wavelength in air at STP is \unit[632.816]{nm}.\footnote{The
-  emitted wavelength is \unit[632.991]{nm} in vacuum.  Data gleaned
-  from wikipedia.}  This is right in the middle of the red band of the
-optical spectrum.
+  emitted wavelength is \unit[632.991]{nm} in vacuum, because of the
+  differences between the indices of refraction in the two materials.}
+This is right in the middle of the red band of the optical spectrum.
 
 When we shine the laser through the grating, a single diffraction
 pattern will form on the screen.  Since we can accurately measure the
@@ -213,11 +213,15 @@ the lab.
 
 \begin{quote}
   \textbf{\textit{LASER SAFETY: Do not intentionally stare into the
-      laser light! While a brief, inadvertent exposure to our HeNe
-      lasers will not injure your eyes, intentionally staring into the
-      beam for any length of time could give you anything from
-      temporary vision impairment to permanent eye injuries, including
-      blindness!}}
+      laser light!  Our lasers are ``eye safe'' (because they emit
+      very little power) and require no protective devices to protect
+      you from inadvertent, brief exposures.  Like anything else,
+      however, safety first!  Devices can malfunction, can go out of
+      specification, and safety devices can fail.  Intentionally
+      staring into laser beams for any length of time could give you
+      anything from temporary vision impairment to permanent eye
+      injuries, including blindness!  Treat all lasers with the
+      respect they deserve!}}
 \end{quote}
 
 You are going to shine the laser on the wall, through the grating, and
@@ -288,21 +292,23 @@ with those in a prism?
       of the tube when they are on.  Do NOT remove the tubes when they
       are energized. Do NOT leave them on for more than a minute at a
       time.  Also, the tubes get HOT when run for more than a few
-      seconds; don't touch then until they have cooled down.}}
+      seconds; don't touch then until they have cooled down.  While
+      these are current limited devices, and should be safe, these can
+      fail silently; treat the device with the respect it deserves!}}
 \end{quote}
 
 Unlike the laser measurements made in the first two parts of the lab,
-the light from the discharge tubes is neither coherent, nor focused,
-and hence can't form an image on a screen or wall.  Instead, you will
-be using your personal optical measurement system (ie, your retina) as
-the screen.  This type of image is called a \textit{virtual} image.
+the light from the discharge tubes is not focused, and hence can't
+form an image on a screen or wall.  Instead, you will be using your
+personal optical measurement system (ie, your retina) as the screen.
+This type of image is called a \textit{virtual} image.
 \begin{enumerate}
 \item Fix a meter stick in the horizontal, and set a discharge tube
   vertically at the midpoint of the stick, and as close to the stick
   as possible.  Mount the grating at a suitable distance (something
   like \unit[50]{cm} should work) from the meter stick, with the
   grating lines parallel to the length of the discharge tube.  Make
-  sure grating is parallel to both the meter stick and the tube.
+  sure the grating is parallel to both the meter stick and the tube.
 \item Look through the grating towards the discharge tube; keep your
   eye as close to the grating as possible to eliminate parallax
   shifts.  Find the spectral lines, which will appear on both sides of
@@ -329,7 +335,7 @@ submit them before your lab session!
   For lines of a given order, are the red or violet lines on the
   screen closer to the zeroth order maximum?
 \item What wavelength of light would produce a first order peak at
-  10\textdegree with a grating of $10^4$ lines per centimeter?
+  10\textdegree\ with a grating of $10^4$ lines per centimeter?
 % 174nm
 \item A $\unit[340]{n m}$ wave with a grating of 5,000 lines per
   centimeter produces its first order peak at what angle?
@@ -350,7 +356,7 @@ submit them before your lab session!
   you a more accurate measurement.  Estimate the uncertainty of your
   measurement.
 \item From your data in Section~\ref{sec:pointers}, determine the
-  wavelength of you laser pointer.  Estimate the uncertainty of your
+  wavelength of your laser pointer.  Estimate the uncertainty of your
   measurement.  Remember that the HeNe laser is also \textit{red}, so
   the wavelengths won't be too far off.  Don't forget to combine the
   data from both first order measurements.
@@ -359,7 +365,8 @@ submit them before your lab session!
   uncertainties.  Don't forget to combine the data from both first
   order measurements.  These wavelengths are all well measured; look
   them up.  How well do your measured values match the tabulated
-  results? 
+  results?  How do the discrepancies compare to your estimated
+  uncertainty? 
 \item Discuss briefly whether you have met the objectives of the lab
   exercises.
 \end{enumerate}
@@ -369,7 +376,7 @@ submit them before your lab session!
 
 From \url{http://hyperphysics.phy-astr.gsu.edu/hbase/hyde.html} The
 measured lines of the Balmer series of hydrogen in the nominal visible
-region are:
+region are (in air or vacuum?):
 
 \begin{tabular}{|cccl|}\hline
   Wavelength [\unit{nm}] & Relative Intensity & Transition &
@@ -407,7 +414,7 @@ which references ``Jenkins and White, Ch. 21''.
   587.562 & strong\\
   667.815 & medium\\\hline
 \end{tabular}
-
+air or vacuum?
 
 
 Mercury, from
@@ -424,7 +431,7 @@ there are other weak lines not tabulated here.
   576.959 & Yellow\\
   579.065 & Yellow\\\hline
 \end{tabular}
-
+air or vacuum?
 
 
 
@@ -437,7 +444,7 @@ Sodium, from
   588.9950 & 2 & $3p_{3/2} \to 3s_{1/2}$ & Yellow\\
   589.5924 & 1 & $3p_{1/2} \to 3s_{1/2}$  & Yellow\\\hline
 \end{tabular}
-
+air or vacuum?
 
 %%% Local Variables: 
 %%% mode: latex
