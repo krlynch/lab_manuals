@@ -26,7 +26,7 @@
 \title{Measuring Electric Phenomena:\\the Ammeter and Voltmeter}
 \author{}
 %Kevin R. Lynch
-%\date{2012-01-24}
+%\date{2015-01-28}
 \date{}
 
 \begin{document}
@@ -68,54 +68,61 @@ learn the proper use of these devices while investigating Ohm's Law.
 \label{sec:theory}
 
 Ohm showed that a \textit{steady} current was caused by a
-\textit{constant} voltage, and that were directly proportional to each
-other, and scaled with the length of the \textit{resistive} element
-through which the current flowed.  Today, we express this relationship
-mathematically as $V/I \propto 1$, where $V$ is the voltage (measured
-in the SI system in \textit{volts}, $V$) and $I$ is the current
-(measured in \textit{amperes}, $A$).  We give the \textit{constant of
-  proportionality} the name \textit{resistance}, and the symbol $R$
+\textit{constant} voltage, that were directly proportional to each
+other, and that they scaled with the length of the \textit{resistive}
+element through which the current flowed.  Today, we express this
+relationship mathematically as $V/I \propto 1$, where $V$ is the
+voltage (measured in the SI system in \textit{volts}, $V$) and $I$ is
+the current (measured in \textit{amperes}, $A$).  We give the
+\textit{constant of proportionality} the name \textit{resistance}, and
+the symbol $R$
 \begin{gather*}
-  \frac{V}{I} = R\ ,
+  R = \frac{V}{I} \ ,
 \end{gather*}
 Resistance is measured in \textit{ohms}, with the symbol $\Omega$.
 
-In this lab, the resistance $R$ will be constant for a given object.
-Later, we will investigate the limits of this relationship: under what
-conditions does it hold true, when does it fail, and how can we
-understand these properties as the results of microscopic physics.
+Ohm's Law is - despite its name - \textit{not} a law of nature;
+instead, it is an empirical relationship for many materials under many
+reasonable conditions.  In this lab, the resistance $R$ will be
+constant for a given object.  In other labs, we will investigate the
+limits of this relationship: under what conditions does it hold true,
+when does it fail, and how can we understand these properties as the
+results of microscopic physics.
 
 Let's now introduce the voltmeter and the ammeter.  A voltmeter is
 designed to measure the voltage \textit{across} a portion of a
-circuit, while an ammeter is designed to measure the current
-\textit{passing through} a particular point in the circuit.  That is,
-the voltmeter stays \textit{outside} the circuit, while the ammeter
-must be inserted \textit{into} the circuit.  While these devices have
-distinct properties and uses, the ammeter and voltmeter are such a
-basic part of the scientific measurement toolkit, that the are usually
-found integrated into a single device called the \textit{multimeter}.
-There are many kinds of multimeters: desktop or handheld, analog or
-digital, manual or autoranging, low and high voltage, etc.  Beware,
-however!  Switching a multimeter from ammeter to voltmeter mode
-usually requires the inputs to be rewired; failing to do so can result
-in blown fuse, or damaging the device.  And finally, for safety
-reasons, never use a multimeter for measurements in high voltage
-circuits, unless you have been specifically trained for that task!  We
-won't be exposing you to such risks in this course.
+circuit, that is, between \textit{two points} in an electrical system.
+An ammeter is designed to measure the current \textit{passing through}
+a \textit{single point} in the circuit.  The voltmeter stays
+\textit{outside} the circuit, while the ammeter must be inserted
+\textit{into} the circuit.  While these devices have distinct
+properties and uses, the ammeter and voltmeter are such a basic part
+of the scientific measurement toolkit that the are usually found
+integrated into a single device called the \textit{multimeter}.  There
+are many kinds of multimeters: desktop or handheld, analog or digital,
+manual or autoranging, low and high voltage, etc.  Beware, however!
+Switching a multimeter from ammeter to voltmeter mode usually requires
+the inputs to be rewired; failing to do so can result in blown fuse,
+or damaging the device.  And finally, for safety reasons, never use a
+multimeter for measurements in high voltage circuits, unless you have
+been specifically trained for that task!  We won't be exposing you to
+such risks in this course.
 
 In order to talk in more detail about these devices, we need a
 language describe the connections between them in a particular
 \textit{electrical circuit} - the circuit diagram, or schematic.
-Schematics are a kind of descriptive map: they make explicit the wired
-connections between electrical devices in a circuit.  They are,
-however, not a photograph.  The connections between devices in a
-diagram do not indicate literal wires, but only the required
-relationships (ie ``topological connections'') between the devices;
-for practical reasons, there may be multiple ways to connect the
-devices, requiring more or fewer actual wire than shown in the
-diagram.  There may also be multiple physical realizations, or
-\textit{layouts}, of a given schematic, and there may be multiple
-equivalent schematics for a given layout.
+Schematics are a kind map: they make explicit the wired connections
+between electrical devices in a circuit.  They are, however, not a
+photograph, and are usually not to scale - much like the New York City
+subway map, they don't show everything that's going on, only the
+critical details.  The connections between devices in a diagram do not
+indicate literal wires, but only the required relationships (ie
+``topological connections'') between the devices; for practical
+reasons, there may be multiple ways to connect the devices, requiring
+more or fewer actual wire than shown in the diagram.  There may also
+be multiple physical realizations, or \textit{layouts}, of a given
+schematic, and there may be multiple equivalent schematics for a given
+layout.
 
 \begin{table}
   \centering
@@ -128,24 +135,24 @@ equivalent schematics for a given layout.
   \caption{The various schematic elements used in this lab.}
   \label{tab:schematic}
 \end{table}
-The language of circuit schematics is highly evolved, and there are de
-facto standard representations of typical devices.
+The language of circuit schematics is highly evolved, and there are
+\textit{de facto} standard representations of typical devices.
 Table~\ref{tab:schematic} contains the common symbols used in this
-lab.  
+lab.
 
 When learning to build or ``wire'' a circuit from a schematic, it is
 usually best to arrange your physical devices (resistors, power
 supplies, meters, etc.) in the same orientation as the devices on the
 schematic.  Then, follow the ``map'' given by the schematic: pick one
 terminal on the first device, and locate all the terminals on other
-devices that are connected to that terminal all the schematic.  Using
+devices that are connected to that terminal on the schematic.  Using
 one or more wires, reproduce those schematic connections in the
 physical world.  Repeat until you have ``visited'' all terminals on
 the schematic.  Note that not all terminals may be labeled identically
-on the schematic and on the physical devices: they may be labeled
+on the schematic and on the physical devices: they may be labeled the
 same, differently, or perhaps not labeled at all!  You will need to
-use your judgment, ask questions of your instructor, or simply try
-an experiment to figure things out on your own.
+use your judgment, ask questions of your instructor, or simply try an
+experiment to figure things out on your own.
 
 \section{Procedures}
 \label{sec:procedures}
@@ -158,20 +165,13 @@ an experiment to figure things out on your own.
 \end{figure}
 \begin{figure}
   \centering
-\includegraphics[width=\textwidth/2]{figures/electro_digi35a_labeled}
+\includegraphics[width=\textwidth/2]{figures/agilent_u8001a}
   \caption{The direct current power supply.}
   \label{fig:dcps}
 \end{figure}
 \begin{figure}
   \centering
-  \subfloat[][Settings for voltmeter mode]{
-    \label{fig:multimeter:voltmeter}
-    \includegraphics[width=\textwidth/3]{figures/simpson_464_voltmeter}
-  }\qquad
-  \subfloat[][Settings for ammeter mode]{
-    \label{fig:multimeter:ammeter}
-    \includegraphics[width=\textwidth/3]{figures/simpson_464_ammeter}
-  }  
+    \includegraphics[width=2\textwidth/3]{figures/agilent_u3401a}
   \caption{The multimeter.}
   \label{fig:multimeter}
 \end{figure}
@@ -183,18 +183,17 @@ current voltage source and a single resistance
 digital multimeters, and two decade resistance boxes.  The wires you
 need are located on a rack in the back of the lab.
 \begin{enumerate}
-\item First, construct the circuit shown in Figure~\ref{fig:simple}.
+\item \fixme{Change PS?} First, construct the circuit shown in Figure~\ref{fig:simple}.
   For the resistor, use one of the two decade resistor boxes; set this
   to something between $\unit[100]{\Omega}$ and $\unit[300]{\Omega}$.
   Turn the \texttt{Voltage} knob on the power supply
   (Figure~\ref{fig:dcps}) to its minimum setting (fully counter
   clockwise), and the\texttt{Current} limiter knob to its maximum
   setting (fully clockwise).  Plug in and turn on the power supply.
-\item Next, configure your first multimeter as a voltmeter: connect
-  your test leads to the \texttt{COMMON} and \texttt{V} inputs, and
-  select the \texttt{DCV} (Direct Current Voltage) Function; see
-  Figure~\ref{fig:multimeter:voltmeter}.  Plug in and turn on the
-  multimeter.
+\item Next, configure your first multimeter as a voltmeter.  Plug in
+  and turn on the multimeter.  Connect your test leads to the black
+  \texttt{LO} and red \texttt{V} inputs, and select the \texttt{DCV}
+  (Direct Current Voltage) Function; see Figure~\ref{fig:multimeter}.
 \item 
   \begin{figure}
     \centering
@@ -205,15 +204,8 @@ need are located on a rack in the back of the lab.
   We'll now get a feel for how the meter works.  First, connect the
   test leads to opposite ends of the resistor - that is,
   \textit{across}) the resistor
-  (Figure~\ref{fig:simplest_with_voltmeter}).  To make a measurement,
-  you must select the correct \texttt{RANGE}; the meter will measure
-  values from \unit[0]{V} up to the value specified above the
-  \texttt{RANGE} button: \unit[2]{V} for the 2 button, \unit[20]{V}
-  for the 20 button, etc.  For maximum precision, always choose the
-  smallest \texttt{RANGE} value larger than the voltage you are
-  measuring.  When in doubt, start at the largest setting, and work
-  you way down.  What happens when you go to far?
-
+  (Figure~\ref{fig:simplest_with_voltmeter}).
+  
   Now, raise the voltage on the power supply; If you have connected
   the circuit and meter correctly, you should see the voltage display
   on the power supply increase from zero, and the value on the
@@ -233,10 +225,9 @@ need are located on a rack in the back of the lab.
     \label{fig:simplest_with_ammeter}
   \end{figure}
   Next, configure the second multimeter as an ammeter: connect your
-  test leads to the \texttt{COMMON} and \texttt{mA} inputs, and select
-  the \texttt{DCmA} (Direct Current milliAmps) Function; see
-  Figure~\ref{fig:multimeter:ammeter}.  Again, you must choose an
-  appropriate \texttt{RANGE}.  You measure current \textit{through} a
+  test leads to the \texttt{LO} and \texttt{mA} inputs, and select the
+  \texttt{DCI} (Direct Current) Function; see
+  Figure~\ref{fig:multimeter}.  You measure current \textit{through} a
   device, which means you must insert the meter \textit{into} the
   circuit: you must ``cut'' the circuit, and ``splice'' the meter into
   the ``hole''.  In this case, you should insert the meter between the
@@ -257,17 +248,16 @@ need are located on a rack in the back of the lab.
   may be telling you.  Repeat the measurements; are your results
   consistent?  Select a different resistance value, and repeat your
   measurements.
-\item Next, we will use the multimeter in \texttt{Resistance} mode
-  to confirm our results.  In this mode, the multimeter performs the
-  same experiment we just did in large: it applies a known voltage,
+\item Next, we will use the multimeter in \texttt{Resistance} mode to
+  confirm our results.  In this mode, the multimeter performs the same
+  experiment we just did in large: it applies a known voltage,
   measures the demand current, and deduces the resistance from these
   two values.  Completely disconnect the circuit.  Connect test leads
-  to the \texttt{COMMON} and \texttt{$\Omega$} inputs, select the
-  \texttt{OHMS} Function, and an appropriate value for the
-  \texttt{RANGE}.  Connect the leads to opposite sides of the
-  resistor, and record the value.  Does the value you measured with
-  the above procedure agree with the value the meter measures
-  directly?
+  to the \texttt{LO} and \texttt{$\Omega$} inputs, select the
+  \texttt{$\Omega$} Function.  Connect the leads to opposite sides of
+  the resistor, and record the value.  Does the value you measured
+  with the above procedure agree with the value the meter measures
+  directly?  With the value you selected on the resistance box?
 \item Imagine now that you are the power supply.  When you look out
   from your terminals, all you see is one wire heading out to the
   left, and one wire heading out to the right; you can't actually tell
@@ -304,9 +294,9 @@ need are located on a rack in the back of the lab.
       \label{fig:resistances}
     \end{figure}
     Configure one of your multimeters to measure resistance.  Set
-    \textit{both} of you decade resistance boxes to the same value;
+    \textit{both} of your decade resistance boxes to the same value;
     measure and record both values.  Are they identical?  Why or why
-    not? 
+    not?
   \item \label{item:series} Next, wire the circuit shown in
     Figure~\ref{fig:resistances:series}.  This is known as the
     \textit{series} combination of circuit elements: the tail of the
@@ -348,10 +338,6 @@ submit them before your lab session!
   you keep the voltage unchanged?
 \item Sketch the relationship between voltage and current implied by
   Ohm's Law.
-\item You are told that a certain voltage will be between \unit[3]{V}
-  and \unit[5]{V}, and are given a non-autoranging voltmeter.  If the
-  range selectors are labeled \unit[200]{mV}, \unit[2]{V}, and
-  \unit[20]{V}, which range do you select and why?
 \end{enumerate}
 
 \newpage
@@ -362,7 +348,7 @@ submit them before your lab session!
 \item Prepare a neatly organized tabulation of your recorded data.
   Make sure to label your data, and include units where appropriate.  
 \item Plot all of your data sets on a single graph, preferably by
-  computer.  Ff Ohm was right, this should be linear.  Is it?  Does
+  computer.  If Ohm was right, this should be linear.  Is it?  Does
   your data support or refute Ohm's Law?  Why or why not?  How do you
   determine the value of the resistance from your plot?  Does it agree
   with the values you measured directly with the multimeter?  Why or
