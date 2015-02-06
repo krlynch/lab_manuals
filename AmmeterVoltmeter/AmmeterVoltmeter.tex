@@ -183,13 +183,24 @@ current voltage source and a single resistance
 digital multimeters, and two decade resistance boxes.  The wires you
 need are located on a rack in the back of the lab.
 \begin{enumerate}
-\item \fixme{Change PS?} First, construct the circuit shown in Figure~\ref{fig:simple}.
+\item First, you have to prepare the power supply, which is the
+  \textit{voltage source} for the experiment.  Before connecting the
+  anything to the front terminals of the supply, plug it in and turn
+  it on.  The outputs will start disabled.  Press the blue
+  \textit{Output on/off} button; the display should now show a demand
+  voltage and current.  To change the output voltage, you must first
+  press the \textit{Voltage/Current} button until the \textit{V}
+  annunciator on the display is flashing; now, turn the knob.  Notice
+  that the voltage changes.  If you wait long enough, the \textit{V}
+  annunciator on the display will stop flashing; turning the knob at
+  this point will result in no change to the voltage (Try it!).  This
+  is a feature, not a bug \ldots it prevents you from accidentally
+  ruining your experiment by turning the knob and unintentionally
+  changing the voltage.  Once you are confident you understand how to
+  adjust the voltage, set the voltage to zero.
+\item Now, construct the circuit shown in Figure~\ref{fig:simple}.
   For the resistor, use one of the two decade resistor boxes; set this
   to something between $\unit[100]{\Omega}$ and $\unit[300]{\Omega}$.
-  Turn the \texttt{Voltage} knob on the power supply
-  (Figure~\ref{fig:dcps}) to its minimum setting (fully counter
-  clockwise), and the\texttt{Current} limiter knob to its maximum
-  setting (fully clockwise).  Plug in and turn on the power supply.
 \item Next, configure your first multimeter as a voltmeter.  Plug in
   and turn on the multimeter.  Connect your test leads to the black
   \texttt{LO} and red \texttt{V} inputs, and select the \texttt{DCV}
@@ -206,15 +217,14 @@ need are located on a rack in the back of the lab.
   \textit{across}) the resistor
   (Figure~\ref{fig:simplest_with_voltmeter}).
   
-  Now, raise the voltage on the power supply; If you have connected
-  the circuit and meter correctly, you should see the voltage display
-  on the power supply increase from zero, and the value on the
-  multimeter should roughly match that on the supply.  If not, you did
-  something wrong and should ``debug'' your connections to make sure
-  they are correct.  What happens when you swap the leads connected to
-  the resistor?  Why?
+  Now, raise the voltage on the power supply to something like
+  \unit[10]{V}; If you have connected the circuit and meter correctly,
+  the voltage displayed by the multimeter should roughly match that on
+  the supply.  If not, you did something wrong and should ``debug''
+  your connections to make sure they are correct.  What happens when
+  you swap the leads connected to the resistor?  Why?
 
-  Turn the voltage down to zero before proceeding; unless our
+  Again, turn the voltage down to zero before proceeding; unless our
   instructions say otherwise, you should always do this before
   changing the configuration of a circuit.
 \item 
