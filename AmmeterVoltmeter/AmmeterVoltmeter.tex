@@ -102,16 +102,16 @@ integrated into a single device called the \textit{multimeter}.  There
 are many kinds of multimeters: desktop or handheld, analog or digital,
 manual or autoranging, low and high voltage, etc.  Beware, however!
 Switching a multimeter from ammeter to voltmeter mode usually requires
-the inputs to be rewired; failing to do so can result in blown fuse,
-or damaging the device.  And finally, for safety reasons, never use a
+the inputs to be rewired; failing to do so can result in blown fuse or
+damage to the device.  And finally, for safety reasons, never use a
 multimeter for measurements in high voltage circuits, unless you have
 been specifically trained for that task!  We won't be exposing you to
 such risks in this course.
 
 In order to talk in more detail about these devices, we need a
-language describe the connections between them in a particular
+language to describe the connections between them in a particular
 \textit{electrical circuit} - the circuit diagram, or schematic.
-Schematics are a kind map: they make explicit the wired connections
+Schematics are a kind of map: they make explicit the wired connections
 between electrical devices in a circuit.  They are, however, not a
 photograph, and are usually not to scale - much like the New York City
 subway map, they don't show everything that's going on, only the
@@ -119,7 +119,7 @@ critical details.  The connections between devices in a diagram do not
 indicate literal wires, but only the required relationships (ie
 ``topological connections'') between the devices; for practical
 reasons, there may be multiple ways to connect the devices, requiring
-more or fewer actual wire than shown in the diagram.  There may also
+more or fewer actual wires than shown in the diagram.  There may also
 be multiple physical realizations, or \textit{layouts}, of a given
 schematic, and there may be multiple equivalent schematics for a given
 layout.
@@ -220,9 +220,10 @@ need are located on a rack in the back of the lab.
   Now, raise the voltage on the power supply to something like
   \unit[10]{V}; If you have connected the circuit and meter correctly,
   the voltage displayed by the multimeter should roughly match that on
-  the supply.  If not, you did something wrong and should ``debug''
-  your connections to make sure they are correct.  What happens when
-  you swap the leads connected to the resistor?  Why?
+  the supply.  If the voltages don't match, you probably did something
+  wrong and should ``debug'' your connections to make sure they are
+  correct.  What happens when you swap the leads connected to the
+  resistor?  Why?
 
   Again, turn the voltage down to zero before proceeding; unless our
   instructions say otherwise, you should always do this before
@@ -249,15 +250,18 @@ need are located on a rack in the back of the lab.
   values as measured on the respective meters.
 \item We are ready to repeat Ohm's measurements!  Vary the voltage in
   small steps (say, ten steps from \unit[0]{V} to \unit[10]{V}), and
-  record both the voltage and the corresponding current.  Don't forget
-  the units!  Quickly plot your data, $I$ vs $V$: if Ohm was right,
-  this should be linear.  Is it?  What is the slope?  How is this
-  related to $R$?  You will do this again more carefully in your
-  Post-Lab exercises, but it's always a good idea to make ``quick and
-  dirty'' plots while taking data to help get a feel for what the data
-  may be telling you.  Repeat the measurements; are your results
-  consistent?  Select a different resistance value, and repeat your
-  measurements.
+  record both the voltage and the corresponding current with the right
+  multimeters.  Do \textit{not} use the voltage or current readout of
+  the power supply for these measurements; in most experiments we will
+  do, they will not match the multimeter measurements.  Don't forget
+  the measurement units (ohms or amps)!  Quickly plot your data, $I$
+  vs $V$: if Ohm was right, this should be linear.  Is it?  What is
+  the slope?  How is this related to $R$?  You will do this again more
+  carefully in your Post-Lab exercises, but it's always a good idea to
+  make ``quick and dirty'' plots while taking data to help get a feel
+  for what the data may be telling you.  Repeat the measurements; are
+  your results consistent?  Select a different resistance value, and
+  repeat your measurements.
 \item Next, we will use the multimeter in \texttt{Resistance} mode to
   confirm our results.  In this mode, the multimeter performs the same
   experiment we just did in large: it applies a known voltage,
