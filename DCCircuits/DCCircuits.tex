@@ -73,9 +73,11 @@ the product of the voltage drop and the current draw
 \end{gather*}
 
 There is a certain maximum power draw, $P_\mathrm{max}$, that real
-resistors can safely dissipate without an undue temperature rise, and
-correspondingly, a maximum safe current, $I_\mathrm{max}$, which the
-resistor can handle without overheating.  The previous equation gives
+resistors can safely dissipate without an undue temperature
+rise,\footnote{That is, smoking, sizzling, bursting into flames, etc.}
+and correspondingly, a maximum safe current, $I_\mathrm{max}$, which
+the resistor can handle without overheating.  The previous equation
+gives
 \begin{gather*}
   I_\mathrm{max} = \sqrt{\frac{P_\mathrm{max}}{R}}\ ,
 \end{gather*}
@@ -216,6 +218,13 @@ effective resistance $R_P$, and then combining the three series
 resistors $R_1$, $R_2$, and $R_P$ into a single effective resistance
 $R_S$.
 
+\fixme{Non-planar circuits} There are other circuits, however, where
+these rules can't be directly applied, and more complicated analysis
+techniques are needed; see Figure~\fixme{figure}.  We will not subject
+you to such circuits in this course, but they are present in most real
+devices, such as the multimeters you are using in this lab, or the
+cell phone you carry in your pocket.
+
 \section{Procedures}
 \label{sec:procedures}
 
@@ -223,13 +232,16 @@ In this lab, we will work with premounted, \unit[1]{W} resistors, a
 power supply, and a pair of multimeters.  
 
 \begin{enumerate}
-\item Choose five resistors from the board and find their resistances
-  and tolerances using the color code described in
+\item For the five resistors on the board, find their advertised
+  resistances and tolerances using the color code described in
   Table~\ref{tab:colorcode}.
 \item Configure one of the multimeters to measure resistance, then
-  measure the resistances of the five resistors you chose in the
-  previous step by using the meter.  Are the measured values within
-  the stated tolerances?
+  measure the resistances, $R_i$, of the resistors on the board.  Are
+  the measured values within the stated tolerances?\footnote{They may
+    not be!  Resistors that have been overheated by passing too much
+    current through them can have permanent changes to their
+    properties.  Unless the measured value is essentially infinite,
+    however, you can still use them without concern for this lab.}
 \item Calculate the maximum safe current for each resistor,
   $I_{i,\mathrm{max}}$; the current in each resistor must be kept
   below this maximum safe value.  In later steps, you must make sure
@@ -243,18 +255,21 @@ power supply, and a pair of multimeters.
   \item To ensure that you don't exceed the maximum safe current
     through any resistor.
   \end{inparaenum}
-\item Determine a safe operating voltage for this circuit.  Calculate
-  the maximum safe voltage using Ohm's Law and the series and parallel
-  resistance formulae.  Set the power supply voltage below this value,
-  and then check (by touching!) each connected resistor to make sure
-  it isn't getting hot!
+\item Determine a safe operating voltage for this circuit,
+  $V_\text{max}$.  Calculate the maximum safe voltage using Ohm's Law
+  and the series and parallel resistance formulae.  Set the power
+  supply voltage below this value, and then check (by touching!) each
+  connected resistor to make sure it isn't getting hot!
 \item Set the second multimeter to read DC Voltage.  Measure and
-  record the potential difference across the power supply.  Then,
-  measure the potential difference across each of the resistors.
+  record the potential difference across the power supply, $V_S$.  Then,
+  measure and record the potential difference across each of the
+  resistors.
 \item Next, set the second multimeter to read DC Current.  Measure and
-  record the current passing through each of the five resistors.  You
-  should make sure that the current passing through the first ammeter
-  stays constant throughout your measurements!
+  record the current passing through each of the five resistors,
+  $V_i$.  You should make sure that the current passing through the
+  first ammeter stays constant throughout your measurements.  If it
+  doesn't, you are either making the measurement incorrectly, or
+  ``shorting out'' some part of the circuit.
 \item Remove the meters and power supply from the circuit.  Measure
   and record the resistance between the following sets of points:
   $AD$, $AC$, $BD$, and $CD$.  You've already measured the values of
