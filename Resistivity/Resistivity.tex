@@ -14,6 +14,7 @@
 \usepackage{paralist}
 \usepackage[draft]{fixme}
 \usepackage{textcomp}
+\usepackage{framed}
 
 \hypersetup{
   breaklinks=true,
@@ -158,17 +159,22 @@ bulbs (\unit[25]{W}, \unit[40]{W}, \unit[60]{W}, \unit[75]{W}, and
 \unit[100]{W}), a variac (variable transformer; see
 Figure~\ref{fig:variac}), two multimeters, a lamp socket board and
 connecting wires.
-\begin{quote}
-  Warning!  The light bulbs \textit{will} get \textbf{hot}!  Be
-  careful when you unscrew them so you don't get burnt.  In addition,
-  there will be unprotected \unit[120]{V} sources present.  Just as
-  you wouldn't stick you fingers in a wall socket, \textbf{do not}
-  touch the bare wires or terminals!  Don't stick any part of your
-  hand \textit{under} the acrylic sheets!  Don't disconnect the wiring
-  from the variac without turning it off!
-\end{quote}
 
-%%
+\begin{framed}
+  \begin{center}
+    {\Large
+      \textbf{Warning!}}
+  \end{center}
+  The light bulbs \textit{will} get \textbf{hot}!  Be careful when you
+  unscrew them so you don't get burnt.  In addition, there will be
+  unprotected \unit[120]{V} AC sources present.  Just as you wouldn't
+  stick you fingers in a wall socket, \textbf{do not} touch the bare
+  wires or terminals!  Don't stick any part of your hand
+  \textit{under} the acrylic sheets!  Don't disconnect the wiring from
+  the variac without turning it off!
+\end{framed}
+
+%% 
 \begin{table}
   \centering
   \caption{The new circuit schematic symbols for this lab.}
@@ -221,20 +227,26 @@ connecting wires.
   resistivity of tungsten as predicted by each lamp individually.  Are
   your measurements consistent?  If not, what might be the problem?
 \item Build the circuit shown in Figure~\ref{fig:circuit}, which will
-  be run at \unit[120]{V}.  The multimeter measuring voltage should be
-  set to the \texttt{AC V} setting and \unit[200]{V} \texttt{Range};
-  the multimeter measuring current should be set to the \texttt{AC A}
-  setting, and an appropriate range determined from the voltage and
-  resistance of the lamp.
-  \begin{quote}
+  be run at \unit[120]{V} AC; we will talk about AC or
+  \textit{alternating current} at a future date.  For this lab, the
+  differences between AC and DC voltages are irrelevant; just follow
+  the directions here.  The multimeter measuring voltage should be set
+  to the \texttt{AC V} setting; the multimeter measuring current
+  should be set to the \texttt{AC I} setting, and should use the lower
+  right, red \unit[10]{A} and right hand, black LO inputs; see
+  Figure~\ref{fig:multimeter}.
+
+  \begin{framed}
     \textbf{DO NOT plug in the variac or turn on the circuit until it
       has been checked by your instructor!}
-  \end{quote}
-\item Turn on the circuit, and set the voltage to \unit[120]{V}.
-  Measure and record both the voltage and current values.  Repeat with
-  all of the lamps.  You will be determining the temperature dependent
-  resistance of the filaments, and extracting the temperature
-  coefficient of resistivity.
+  \end{framed}
+  
+\item Finally, turn on the circuit, and set the voltage to
+  \unit[120]{V} by rotating the large knob on the variac.  Measure and
+  record both the voltage and current values.  Repeat with all of the
+  lamps.  You will be determining the temperature dependent resistance
+  of the filaments, and extracting the temperature coefficient of
+  resistivity.
 \end{enumerate}
 
 \subsection{Variations on a theme}
@@ -242,9 +254,9 @@ connecting wires.
 
 \begin{figure}
   \centering
-  \includegraphics[width=2\textwidth/3]{figures/bk_5460}
+  \includegraphics[width=2\textwidth/3]{figures/agilent_u3401a}
 %% Photo by Kevin R. Lynch, 2012
-  \caption{The high percision BK Precision 5460 multimeter.}
+  \caption{The high precision Agilent U3401A multimeter.}
   \label{fig:multimeter}
 \end{figure}
 In this section, you will be responsible for answering the following
