@@ -1,1 +1,5 @@
-I used kicad to draw schematics.  Yes, they suck.
+Originally, I used kicad to draw schematics.  Yes, they suck.
+
+Now, I use gschem because resistors look like resistors.  Just
+manually select and delete the frame before starting.  Then, "print"
+to ps file, and ps2pdf afterwards to get something correctly boxed.

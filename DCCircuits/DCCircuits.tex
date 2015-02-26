@@ -74,10 +74,10 @@ the product of the voltage drop and the current draw
 
 There is a certain maximum power draw, $P_\mathrm{max}$, that real
 resistors can safely dissipate without an undue temperature
-rise,\footnote{That is, smoking, sizzling, bursting into flames, etc.}
-and correspondingly, a maximum safe current, $I_\mathrm{max}$, which
-the resistor can handle without overheating.  The previous equation
-gives
+rise,\footnote{That is: smoking, sizzling, bubbling, darkening,
+  melting, bursting into flames, etc.}  and correspondingly, a maximum
+safe current, $I_\mathrm{max}$, which the resistor can handle without
+overheating.  The previous equation gives
 \begin{gather*}
   I_\mathrm{max} = \sqrt{\frac{P_\mathrm{max}}{R}}\ ,
 \end{gather*}
@@ -140,24 +140,31 @@ with multi-\unit{kW} ratings are also available.
     code is a four or five band code, in a form that resembles
     scientific or engineering notation: for a resistor with $n$ bands,
     the first $n-2$ bands (starting with the band nearest a lead) are
-    the mantissa, the $n-1$st band is the exponent, and the last band
-    is the \textit{tolerance}.  A four band code gives $c_1 c_2 \times
-    10^{c_3}\Omega \pm c_4\%$; for example, brown-brown-black-gold is
-    $11\times10^{0}\Omega \pm 5\% = 11\Omega \pm 5\%$.  Resistors are
-    not generally available in all possible combinations of values;
-    you can't, for instance, buy a $50\Omega$ resistor of any
-    tolerance, but you can buy a $49.9\Omega$ or a $51\Omega$ resistor.}
+    the mantissa, the $n-1$st band is the base-10 exponent, and the
+    last band  is the \textit{tolerance}.  A four band code gives $c_1
+    c_2 \times 10^{c_3}\Omega \pm c_4\%$; for example,
+    brown-brown-black-gold is $11\times10^{0}\Omega \pm 5\% = 11\Omega
+    \pm 5\%$.  Resistors are not available in all possible
+    combinations of nominal values; you can't, for instance, buy a
+    $50\Omega$ resistor of any tolerance, but you can buy a
+    $49.9\Omega$ or a $51\Omega$ resistor.}
   \label{tab:colorcode}
 \end{table}
-The resistors we will use are the classic ``carbon composite axial
-lead'' type; while particularly convenient for this lab, they are not
-used much anymore, except in niche applications.  For modern consumer
-or high precision electronics, however, they are both too inaccurate,
-and too large to use.  The convenience factor for hands-on work is
-great: they are large enough for you to measure and manipulate by
-hand, they are labeled with a standard color banding code
-(Table~\ref{tab:colorcode}) and they are easy to attach to a board via
-hand soldering.
+The resistors we will use here are the classic ``carbon composite,
+axial lead'' type; while particularly convenient for this lab, they
+are not used much anymore, except in niche applications.  For modern
+consumer or high precision electronics, they are both too inaccurate
+and \textit{much} too large to use: imagine everyone carrying around a
+cellphone the size of a suitcase.  The convenience factor for hands-on
+work is great with axial lead resistors: they are large enough for you
+to measure and manipulate by hand, they are labeled with a standard
+color banding code (Table~\ref{tab:colorcode}), you can use them in
+breadboards for prototyping, and they are easy to attach to a board
+via hand soldering.  Modern SMT resistors are typically of order a few
+millimeters (at most!) on a side, and are not installed by hand:
+large, computerized, high speed ``pick and place'' machines position
+and attach these tiny components to the circuit boards use in consumer
+electronics without any direct human intervention.
 
 \section{Theory}
 \label{sec:theory}
@@ -188,19 +195,19 @@ sum of all the individual resistances:
 \begin{gather*}
   R_S = R_1 + R_2 + R_3 + \cdots = \sum_i R_i\ .
 \end{gather*}
-This is because the same current must pass through each resistor.  For
-parallel combined resistors, as shown in
+This is because the same \textit{current} must pass through each
+resistor.  For parallel combined resistors, as shown in
 Figure~\ref{fig:combinations:parallel}, the inverse of the equivalent
 resistance is the sum of the inverses of the individual resistances:
 \begin{gather*}
   \frac{1}{R_P } = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3} +
   \cdots = \sum_i \frac{1}{R_i}\ .
 \end{gather*}
-In this case, the voltage drop across all of the resistors must be the
-same, so the total current is divided between all the resistors
-according to Ohm's Law.  The current in a given \textit{branch} of the
-parallel circuit is inversely proportional to the resistance of that
-branch.
+In this case, the \textit{voltage drop} across all of the resistors
+must be the same, so the total current is divided between all the
+resistors according to Ohm's Law.  The current in a given
+\textit{branch} of the parallel circuit is inversely proportional to
+the resistance of that branch.
 
 \begin{figure}
   \centering
@@ -218,10 +225,18 @@ effective resistance $R_P$, and then combining the three series
 resistors $R_1$, $R_2$, and $R_P$ into a single effective resistance
 $R_S$.
 
-\fixme{Non-planar circuits} There are other circuits, however, where
-these rules can't be directly applied, and more complicated analysis
-techniques are needed; see Figure~\fixme{figure}.  We will not subject
-you to such circuits in this course, but they are present in most real
+\begin{figure}
+  \centering
+  
+  \caption{An example of a circuit where the series and parallel
+    resistor rules alone can not be used to solve for the equivalent
+    resistance.}
+  \label{fig:bridgecircuit}
+\end{figure}
+There are many circuits, however, where these rules can't be directly
+applied, and more complicated analysis techniques are needed; see for
+example Figure~\ref{fig:bridgecircuit}.  We will not subject you to
+such circuits in this course, but they are present in most real
 devices, such as the multimeters you are using in this lab, or the
 cell phone you carry in your pocket.
 
@@ -238,10 +253,11 @@ power supply, and a pair of multimeters.
 \item Configure one of the multimeters to measure resistance, then
   measure the resistances, $R_i$, of the resistors on the board.  Are
   the measured values within the stated tolerances?\footnote{They may
-    not be!  Resistors that have been overheated by passing too much
-    current through them can have permanent changes to their
-    properties.  Unless the measured value is essentially infinite,
-    however, you can still use them without concern for this lab.}
+    not be!  Resistors that have been overheated by exceeding the
+    maximum safe current through them will have permanent changes to
+    their properties.  Unless the measured value is essentially
+    infinite, however, you can still use them without concern for this
+    lab.}
 \item Calculate the maximum safe current for each resistor,
   $I_{i,\mathrm{max}}$; the current in each resistor must be kept
   below this maximum safe value.  In later steps, you must make sure
@@ -259,7 +275,9 @@ power supply, and a pair of multimeters.
   $V_\text{max}$.  Calculate the maximum safe voltage using Ohm's Law
   and the series and parallel resistance formulae.  Set the power
   supply voltage below this value, and then check (by touching!) each
-  connected resistor to make sure it isn't getting hot!
+  connected resistor to make sure it isn't getting hot!  If any of
+  them are, you are exceeding the safe current through them, and
+  should do your safety calculations over again!
 \item Set the second multimeter to read DC Voltage.  Measure and
   record the potential difference across the power supply, $V_S$.  Then,
   measure and record the potential difference across each of the
