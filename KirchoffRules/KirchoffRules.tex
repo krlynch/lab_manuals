@@ -14,6 +14,7 @@
 \usepackage{paralist}
 \usepackage[draft]{fixme}
 \usepackage{textcomp}
+\usepackage{framed}
 
 \hypersetup{
   breaklinks=true,
@@ -42,8 +43,250 @@
 \item To verify Kirchoff's Junction rule for currents.
 \end{enumerate}
 
-%\newpage
+\section{Introduction}
+\label{sec:introduction}
 
+Gustav Kirchoff was a prominent 19\textsuperscript{th} century
+Prussian physicist.  He is still well known for his work in both
+circuit theory and spectroscopy.  He won every prominent award for
+science in the middle part of the century, and is remembered along
+with his spectroscopist colleague Robert Bunsen\footnote{Yes,
+  \textit{that} Bunsen.} by the Bunsen-Kirchoff Award for
+Spectroscopy.
+
+The study of electricity was still in its infancy in the early half of
+the century; you may recall that Georg Ohm only discovered the
+relationship between voltage, current, and resistance in 1827.
+Kirchoff was certainly familiar with this work, and he first
+discovered what are now called Kirchoff's Circuit Laws during his
+electrical studies while a student in the 1840s.  This later formed
+the basis for his doctoral dissertation.
+
+\section{Theory}
+\label{sec:theory}
+
+Kirchoff's Rules easy to state, but first we need to define a few
+terms.  A \textit{loop} in a circuit is any closed path that travels
+through one or more of the circuit elements and returns to its origin.
+A \textit{junction} is any point where two or more components are
+connected by a conducting path.  With these definitions, the Rules
+themselves are simple to state:
+\begin{enumerate}
+\item Loop Rule: The directed sum of the voltage drops around any loop
+  in a circuit must be zero:
+  \begin{gather*}
+    \sum V_i = 0\ .
+  \end{gather*}
+\item Junction Rule: The directed sum of all currents entering a
+  junction in any circuit must be zero:
+  \begin{gather*}
+    \sum I_i = 0\ .
+  \end{gather*}
+\end{enumerate}
+The \textit{voltage drop} is the difference in voltage from one
+terminal of a circuit element to another terminal.  By using the term
+\textit{directed sum}, we indicate that the \textit{sign} of the term
+matters: if we choose to define a current entering a junction as
+positive, then one that leaves a junction must be negative; if we
+choose to define the current as traveling in a clockwise direction
+around a loop, then we should measure the voltage drops in the same
+direction.
+
+Kirchoff's Rules are equivalent to the conservation of energy and the
+conservation of charge respectively.  The junction rule is easy to
+understand in this context.  Since current is just the motion of
+charged particles, the Junction Rule says simply that every charge
+that goes into a junction must leave it: you can't create or destroy
+charges.  The Loop Rule is a little more complicated, but not much:
+because generating a voltage in a power supply requires a power
+source, and driving a current through a resistor dissipates power, all
+the energy that we add to the circuit must be consumed by the
+resistive elements.
+
+Kirchoff's Rules apply to more than just resistors and power supplies
+(as we will learn in later labs), but they are really just
+approximations to the full theory of electromagnetism described by
+Maxwell's Equations.  Luckily for you, these exceptions do not arise
+in any experiments we will perform in this class.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth/2]{figures/junction}
+  \caption{A junction, $A$, with four currents: $I_1$, $I_2$, $I_3$,
+    and $I_4$.}
+  \label{fig:junction}
+\end{figure}
+The \textit{use} of these rules is relatively straightforward, but
+let's do some simple examples to make those uses concrete.  Let's
+start with the Junction Rule.  When we measure the currents
+\textit{into} a junction, we mean that we \textit{assume} that
+currents along all branches flow into the junction, and make our
+measurements assuming that's true.  But since that can't be true -
+That's what the rule says, after all! - sometimes we'll measure the
+current along a branch as \textit{negative}, which means that it
+actually flows \textit{out} of the junction.  Take
+Figure~\ref{fig:junction} as an example: there are four branches
+connected to junction $J$.  Let's label the currents from points
+$T_1$, $T_2$, etc by $I_1$, $I_2$, etc, and let's further assume that
+they all flow \textit{into} $J$.  When we measure the current with our
+ammeter, we have to choose which terminal of the ammeter to place
+where.  By the conventional choice of inflowing currents, we should
+\textit{always} connect the negative terminal of the ammeter at $J$,
+while connecting the positive terminal to the $T_i$.  Then, the meter
+will sometimes read positive values (for properly inflowing currents),
+and sometimes read negative values (for outflowing currents), and the
+sum of the total should be zero.  There are other possible approaches
+to the measurement, but all of them must be equivalent to what we have
+outlined here.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth/2]{figures/loop}
+  \caption{here be a caption}
+  \label{fig:loop}
+\end{figure}
+The approach for Loop Rule measurements is almost as simple:  assume
+that there is a current flowing around the loop in one direction or
+the other, and measure all the voltage drops around the loop in that
+direction.  So, for the loop in Figure~\ref{fig:loop}, starting with
+node $A$, we'll assume a current flowing in a clockwise direciton.
+First, measure the voltage drop between node $A$ and node $B$, by
+measuring with the negative probe of the voltmeter at $A$, and the
+positive probe at $B$.  Then, measure the voltage drop between nodes
+$B$ and $C$ by placing the negative probe at $B$, and the positive
+probe at $C$.  Repeat all the way around the loop.  Some of the
+voltage drops will be negative and some positive, while the
+accumulated voltage drop should vanish.  As for the Loop Rule, there
+are other possible equivalent approaches to making this measurement,
+but they must all be equivalent to what we have outlined here.
+
+\section{Procedures}
+\label{sec:procedures}
+
+We will now investigate Kirchoff's Laws quantitatively, in two steps:
+first, we will use a single loop circuit to study the loop rule in
+isolation, and then we will add a second loop to study the loop and
+junction rules at the same time.  For the experiment, you will need
+three multimeters, two power supplies, the circuit board, and various
+lengths of cabling.  Use the two identical multimeters exclusively as
+ammeters, and the third multimeter for everything else.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth/2]{figures/circuit_board}  
+  \caption{The circuit board used in this lab.  You only need to use
+    three of the resistors on this board; while you can use any three
+    just as easily, we strongly suggest using the three parallel
+    resistors at the bottom right.}
+  \label{fig:circuitboard}
+\end{figure}
+\begin{framed}
+  \begin{center}
+    {\Large \textbf{Reminder}}
+  \end{center}
+  When we say ``Record a measurement'', we \textit{always} mean that
+  you should record the measurement, \textit{and an estimate of the
+    uncertainty of that measurement}!  \textbf{Always!}
+\end{framed}
+Remember also that the \textit{direction} of your measurement matters:
+if you swap the measurement leads, you change the \textit{sign} of the
+measured current or voltage (why?).  The same holds for power
+supplies.  You must come up with a measurement convention, and
+consistently apply it, or you will get the wrong results.  The circuit
+board has five resistors on it, but you will only use three of them
+for this lab; you can choose any three, but it is probably easiest to
+use the three parallel resistors in the bottom right corner of the
+board; see Figure~\ref{fig:circuitboard}.
+
+\subsection{One loop}
+\label{sec:oneloop}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth/2]{figures/oneloop}
+  \caption{The circuit used in Section~\ref{sec:oneloop} to study
+    Kirchoff's Loop Rule.} 
+  \label{fig:oneloop}
+\end{figure}
+
+You will use the circuit in Figure~\ref{fig:oneloop} to study the Loop
+rule; note that you will not use all the resistors on the board.  Do
+\textit{not} build this circuit yet!.
+\begin{enumerate}
+\item Before connecting any components, make sure to turn the power
+  supply voltage \textit{on both power supplies} down to zero!
+\item Measure and record the resistance of each resistor on the
+  board.  Do these measurements match the color code on each resistor?
+  They may not, but if they are in the ball park, you may use them
+  anyway. 
+\item Calculate the maximum safe current for the circuit; determine
+  which ammeter inputs you need to use so as not to blow the fuses in
+  the ammeter!  When in doubt, start with the largest range available! 
+\item Connect the components as shown in the schematic, and slowly
+  turn up the voltage to a value that will not exceed the maximum safe
+  current in any of the resistors.  Something like \unit[15]{V} should
+  be a reasonable starting value.  \textbf{Important!}: If the ammeter
+  reading ``jumps'' from zero to a very high (or offscale) value when
+  you start turning up the voltage, disconnect the circuit and get
+  help from your Instructor \ldots do this \textit{before} you smell
+  smoke or blow the fuses.
+\item Measure and record the current in the loop with the ammeter.
+  Remember that currents are \textit{directed}; this means you need to
+  measure with the probe leads oriented consistently.
+\item Measure and record the voltage drops around the loop: pick a
+  junction as you ``reference point'', and march around the loop
+  measuring the voltage drops across the power supply, the resistors
+  and the ammeter.  Remember that the sum you will do is
+  \textit{directed}; you should use the same orientation convention
+  you used to measure the current.  You should find that the voltage
+  drop across the power supply has opposite sign to the voltage drops
+  across all the other components.
+\item Repeat the measurements at another voltage to check for
+  consistency.
+\end{enumerate}
+You should at this point quickly check your data for consistency with
+Kirchoff's Loop Rule.
+
+Before moving on, reduce the power supply voltage back to zero.
+
+\subsection{Two loops}
+\label{sec:twoloops}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth/2]{figures/twoloops}
+  \caption{The circuit used in Section~\ref{sec:twoloops} to study
+    Kirchoff's Loop and Junction Rules.} 
+  \label{fig:twoloops}
+\end{figure}
+
+For this section, you will use the circuit in
+Figure~\ref{fig:twoloops}; note that you will \textit{still} not use
+all of the resistors on the board.
+\begin{enumerate}
+\item Deja Vu: Before connecting any components, make sure to turn the
+  power supply voltage \textit{on both power supplies} down to zero!
+\item Make sure that you in fact measured and recorded the resistances
+  of each and every resistor on the board.
+\item Connect the components as show in the schematic.  Be sure to
+  match the polarities of both the power supplies and the ammeters.
+\item Now, slowly turn up both power supplies to something like
+  \unit[15]{V}.  Again, watch for indications that you have made a
+  wiring error, and turn things off \textit{before} you break things,
+  and \textit{before} getting help from your instructor.
+\item Measure and record the currents in both ammeters.
+\item Measure and record the voltage drops across both power supplies,
+  all three resistors, and both ammeters.
+\item Using your third multimeter this time as an ammeter, but without
+  changing anything else in the circuit, directly measure and record
+  the current flowing between resistor $R_1$ and point $B$.
+\item Repeat the measurements two more times, with a different value
+  of the voltage on one or the other of the power supplies.
+\end{enumerate}
+At this point, you should quickly check your data for consistency with
+Kirchoff's Loop and Junction Rules.
+
+\newpage
 \section*{Pre-Lab Exercises}
 
 Answer these questions as instructed on Blackboard; make sure to
@@ -53,12 +296,14 @@ submit them before your lab session!
 \item Kirchoff's Rules are defined in terms of loops and junctions.
   How would you define a ``loop'' in a circuit?  What is a junction?
 \item What happens to the reading of the ammeter if you reverse the
-  connections?
+  connections?  The voltmeter?
 \item Recall that current is just the motion of electric charges.  The
   Junction rule is a practical manifestation of what more fundamental
   conservation law?  What conservation law implies the loop rule?
-\item Write the junction equation for point $B$ of Figure~2.1.
-\item Write the loop equation for the loop $AFEBA$ of Figure~2.1.
+\item Write a junction equation for the point $B_1$ of
+  Figure~\ref{fig:twoloops}.  Make clear your conventions for currents
+\item Write a loop equation for the loop $BB_1C_1CB$ of
+  Figure~\ref{fig:twoloops}. 
 \end{enumerate}
 
 \newpage
@@ -66,17 +311,13 @@ submit them before your lab session!
 \section*{Post-Lab Exercises}
 
 \begin{enumerate}
-\item For the one-loop circuit of Unit~1, verify the loop and junction
-  rules.  That is, using your data, check if the currents into and out
-  of point $B$ in Figure~2.2 are conserved.  Further, determine
-  whether the loop rule is satisfied in the loops $ABCDA$,
-  $AB_1C_1DA$, and $BB_1C_1CB$.  To what level of precision are the
-  rules satisfied (what's the uncertainty)?
-\item For the two-loop circuit of Unit~2, verify the loop and junction
-  rules. There are two junctions of interest here, $A$ and $B$, and a
-  large number of loops; look at loops $AFEBA$, $ABCDA$, $AFEBCDA$,
-  and $AFEBB_2C_2DA$.
-  To what level of precision are the rules satisfied?
+\item For the one-loop circuit of Section~\ref{sec:oneloop}, verify
+  the Loop Rule.  Is the rule satisfied?  To what level of uncertainty?
+\item For the two-loop circuit of Section~\ref{sec:twoloops}, verify
+  both the Loop and Junction Rules.  There are two coupled loops, so
+  you have three total loops to analyze: $BB_1C_1CB$,
+  $B_1B_2C_2C_1B_1$, and $BB_1B_2C_2C_1CB$.  Are the rules satisfied
+  in all cases?  To what level of uncertainty?
 \item Discuss briefly whether you have met the objectives of the lab
   exercises. 
 \end{enumerate}
