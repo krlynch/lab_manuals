@@ -114,7 +114,7 @@ From an operating perspective, you should think of oscilloscopes as
 nothing more than really fancy voltmeters: if you already know how to
 measure signals with a multimeter, you connect an oscilloscope to the
 circuit in the same way.  On the other hand, oscilloscopes can give
-you a details, visual picture of the entire profile of the signal, not
+you a detailed, visual picture of the entire profile of the signal, not
 just moment information.  Where the multimeter can measure with
 fantastic accuracy \textit{if} you know the form of the signal, the
 oscilloscope is the tool that \textit{tells} you what that form is.
@@ -129,13 +129,17 @@ There is another key difference between a multimeter and an
 oscilloscope that bears mentioning here.  Multimeters usually can only
 measure one signal at a time, while oscilloscopes usually have more
 (ours can measure four).  On the other hand, multimeters have
-\textit{floating} inputs; that is, they measure the voltage difference
-between the two inputs.  Oscilloscopes have non-floating inputs: the
-\textit{reference} or \textit{ground} sides of each channel are tied
-together, and are tied to the \textit{chassis ground} (also known as
-\textit{earth ground} or \textit{safety ground}) of the device, which
-is always connected to the ground lead on the power cord.  To measure
-the voltage between two arbitrary points using an oscilloscope
+\textit{floating} inputs; that is, they directly measure the voltage
+difference between the two inputs, which can be connected to
+\textit{any} two points in the circuit.  Oscilloscopes have
+non-floating inputs: the \textit{reference} or \textit{ground} sides
+of each channel are tied together, and are tied to the \textit{chassis
+  ground} (also known as \textit{earth ground} or \textit{safety
+  ground}) of the device, which is always connected to the ground lead
+on the power cord.  The grounds of all channels have to be connected
+to the same point in the circuit, and you are usually forced to make
+that point the same as the ground terminal of the power supply.  To
+measure the voltage between two arbitrary points using an oscilloscope
 requires simultaneous measurements on two channels, and a subtraction
 operation.  We'll show you how to do this later on in this lab.
 
