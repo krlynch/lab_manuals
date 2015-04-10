@@ -100,10 +100,13 @@ which has the general solution
 \end{gather*}
 If $V_s(t)$ is allowed to be any old arbitrary function, you're stuck.
 But getting stuck takes all the fun out of your work, so of course,
-you can't allow it to be an arbitrary function: focus on sinusoids.
-This is a class of broadly useful functions - they're what come out of
-the wall, they're present in electromagnetic radiation, and they are
-highly amenable to mathematical manipulation and analysis.  Let's take
+you can't allow it to be an arbitrary function: let's focus on
+sinusoids.  This is a class of broadly useful functions - they're what
+come out of the wall, for instance.  But most importantly, they are
+highly amenable to mathematical manipulation and analysis, due to
+Fourier's theorem: any well behaved function can be decomposed into a
+(potentially infinite) sum of sinusoids of all possible frequencies.
+Let's take
 \begin{gather*}
   V_s(t) = V_s \cos \omega t\ .
 \end{gather*}
@@ -122,10 +125,11 @@ circuit, you will find a remarkable thing:
 \end{gather*}
 Because of the presence of the capcitor, the applied voltage $V_s(t)$
 gives rise to a current which not only has a frequency dependent
-amplitude, but more importantly has a different phase; see
-Figure~\ref{fig:phase}.  Because $phi$ is positive, the current rises
-slightly before the voltage, and we say the current \textit{leads} the
-voltage, or that the voltage \textit{follows} the current.  
+amplitude, but more importantly has a different phase than the source
+voltage; see Figure~\ref{fig:phase}.  Because $phi$ is positive, the
+current rises slightly before the voltage: we say the current
+\textit{leads} the voltage, or that the voltage \textit{follows} the
+current.
 
 In our teaching labs, we don't have the tools to measure the current
 profile and compare it directly to the applied voltage - remember, we
@@ -154,7 +158,7 @@ allows us to measure $\phi$.
     the function amplitudes are displayed on the right.  In both
     cases, the frequency is normalized in units of $1/RC$.  The phase
     is normalized to $\pi/2$, while the amplitudes are normalized to
-    $V_s$.}
+    $V_s$.  Notice the limiting behavior when $\omega = 1/RC$.}
   \label{fig:frequency}
 \end{figure}
 There is another point of interest: the behavior of the system as a
@@ -162,20 +166,22 @@ function of frequency.  In the limit that the frequency goes to zero
 (that is a DC voltage), the steady state behavior of this system
 should look just like the DC system you studied previously: $V_R(t)$
 should go to zero, $V_s(t)$ should equal the applied voltage.  You
-should check these assertions; you'll find they are true.  In the
-other extreme, where the frequency gets large, you probably have no
-\textit{a priori} expectations.  Plotting the behavior as a function
-of frequency (see Figure~\ref{fig:frequency}), you should find that
-the amplitude of $V_C(t)$ vanishes, while the amplitude of $V_R(t)$
-goes to $V_s$, while the phase difference between the applied voltage
-and resulting current also vanishes.  You can prove this by taking the
-limits of the voltage expressions when $\omega \to \infty$.  In other
-words, the circuit acts like the capacitor isn't even there!
-Capacitors become transparent to currents at high frequency, and
-opaque to currents at very low frequencies.
+should check these assertions.  In the other extreme, where the
+frequency gets large, you probably have no \textit{a priori}
+expectations.  Plotting the behavior as a function of frequency (see
+Figure~\ref{fig:frequency}), you will find that the amplitude of
+$V_C(t)$ vanishes, while the amplitude of $V_R(t)$ goes to $V_s$,
+while the phase difference between the applied voltage and resulting
+current also vanishes.  You can prove this by taking the limits of the
+voltage expressions when $\omega \to \infty$.  In other words, the
+circuit acts like the capacitor isn't even there!  Capacitors become
+transparent to currents at high frequency, and opaque to currents at
+very low frequencies.  This is known as \textit{filtering} behavior,
+and is the basis of most of the interesting behaviors in the analog
+electronics we all use everyday.
 
 There is another way to view the complexities of voltages and currents
-in AC RC circuits.  Note that the quantity $RC\omega$ is
+in AC RC circuits.  Notice that the quantity $RC\omega$ is
 dimensionless; in other words, $1/C\omega$ has the units of
 resistance.  It \textit{isn't} a resistance (it's not a constant, for
 starters), but it has the same units, and some of the same properties.
@@ -209,12 +215,14 @@ find
   V_s^2 = V_R^2 + V_C^2\ .
 \end{gather*}
 
-Finally, notice that $Z$ and $\phi$ can be looked on as the magnitude
-and direction respectively of a \textit{vector} that gives the
-relative behavior of $V_R(t)$ and $V_C(t)$ compared to $V_s(t)$.
-These vectors are called \textit{phasors}, and phasor analysis
-provides a useful basis for analyzing complex AC circuits.  We will
-have more to say about phasors in later labs.
+\begin{comment}
+  Finally, notice that $Z$ and $\phi$ can be looked on as the
+  magnitude and direction respectively of a \textit{vector} that gives
+  the relative behavior of $V_R(t)$ and $V_C(t)$ compared to $V_s(t)$.
+  These vectors are called \textit{phasors}, and phasor analysis
+  provides a useful basis for analyzing complex AC circuits.  We will
+  have more to say about phasors in later labs.
+\end{comment}
 
 \section{Procedures}
 \label{sec:procedures}
@@ -226,9 +234,8 @@ have more to say about phasors in later labs.
     out in Step~\ref{item:phase}.} 
   \label{fig:curvedefs}
 \end{figure}
-You should receive two multimeters (one of which should be a
-BK-5460), an oscilloscope, a function generator, a
-decade resistance box, and a decade capacitor box.
+You should receive two multimeters, an oscilloscope, a function
+generator, a decade resistance box, and a decade capacitor box.
 
 \begin{enumerate}
 \item First, let's select component values for testing.  Choose a
@@ -237,9 +244,9 @@ decade resistance box, and a decade capacitor box.
   \unit[600]{Hz}.  Calculate $X_C$ and choose a value for $R \approx
   1.2 X_C$.  Measure and record the values of $R$ and $C$
 \item Configure the circuit for testing shown in
-  Figure~\ref{fig:rccircuit}.  Insert the Simpson multimeter to record
-  the AC current; except in the last two steps of the procedure, make
-  sure the current remains constant throughout the experiment.
+  Figure~\ref{fig:rccircuit}.  Insert one multimeter to record the AC
+  current; except in the last two steps of the procedure, make sure
+  the current remains constant throughout the experiment.
 \item Using the other meter, record the frequency $f$, and the RMS AC
   voltages across the signal generator $V_s$, the resistor $V_R$, and
   the capacitor $V_C$.
@@ -253,18 +260,18 @@ decade resistance box, and a decade capacitor box.
   is visible.  You should have a display that looks roughly like
   Figure~\ref{fig:curvedefs}.  We're going to record the differences
   between the zero crossings, and calculate the phase from these
-  differences.  Record (at least!) $A_1A_3$, $A_1B_1$, and
-  $B_1A_2$.\footnote{$A_2B_2$ and $B_2A_3$ are redundant with
+  differences.  Record (at least!) $A_1A_3$, $A_1B_1$, and $B_1A_2$
+  using the cursors.\footnote{$A_2B_2$ and $B_2A_3$ are redundant with
     $A_1B_1$, and $B_1A_2$, and $A_1A_2$ should equal $A_2A_3$ if you
     have properly centered the sinusoid vertically.}  Increase the
   frequency by 50\%, and determine the phase shift again.  Double the
   initial frequency, and repeat.
-\item \label{item:current}
-  Next, map out the amplitude of the current response.  Without
-  changing $R$ and $C$, vary the frequency over, say, ten points, and
-  record the frequency, RMS voltage $V_s$ and RMS current $I$ at those
-  points.  Record you observations of the amplitudes of $V_s$ and
-  $V_R$ on the oscilloscope.
+\item \label{item:current} Next, map out the amplitude of the current
+  response.  Without changing $R$ and $C$, vary the frequency over,
+  say, ten points, and record the frequency, RMS voltage $V_s$, and
+  RMS current $I$ at those points.  Measure and record your
+  observations of the amplitudes of $V_s$ and $V_R$ on the
+  oscilloscope.
 \end{enumerate}
 
 \appendix
@@ -288,7 +295,7 @@ highly amenable to mathematical manipulation and analysis.  Let's take
 \begin{gather*}
   V_s(t) = V_s \cos \omega t\ .
 \end{gather*}
-From your PHYS-151 course, you should remember that $V_s$ is the
+From your Physics I course, you should remember that $V_s$ is the
 \textit{amplitude} of the oscillation, while $\omega = 2 \pi f$ is the
 \textit{angular frequency}.  With this applied voltage, we
 \textit{can} perform the integration, which I leave as an exercise to
@@ -307,12 +314,12 @@ complicated looking expression:
   + \frac{V_s}{R} \frac{1}{(1/RC)^2 + \omega^2} 
   \left( \frac{1}{RC} \cos \omega t + \omega \sin \omega t \right)\ .
 \end{multline*}
-Notice that the first line contains only a decaying exponential
-dependence on time; wait long enough, and those terms all die off.
-This is called the \textit{transient response} of the circuit, which
-comes from the initial charge on the capacitor and the initial action
-of turning on the function generator at time $t_0$.  The second line
-has no exponential dependence, and is called the \textit{steady state}
+Notice that the first line contains a decaying exponential dependence
+on time; wait long enough, and those terms all die off.  This is
+called the \textit{transient response} of the circuit, which comes
+from the initial charge on the capacitor and the initial action of
+turning on the function generator at time $t_0$.  The second line has
+no exponential dependence, and is called the \textit{steady state}
 response of the circuit.  That's the part we are really interested in,
 and it looks fairly awful in this form.  Let's clean it up some.
 
@@ -378,11 +385,13 @@ submit them before your lab session!
 \section*{Post-Lab Exercises}
 
 \begin{enumerate}
-\item Perform the integral 
-  \begin{gather*}
-    \int_{t_0}^t e^{\alpha t} \cos\beta t \dd t\ ,
-  \end{gather*}
-  where $\alpha$ and $\beta$ are constants.  What is the result?
+  \begin{comment}
+  \item Perform the integral
+    \begin{gather*}
+      \int_{t_0}^t e^{\alpha t} \cos\beta t \dd t\ ,
+    \end{gather*}
+    where $\alpha$ and $\beta$ are constants.  What is the result?
+  \end{comment}
 \item From your measured resistance, capacitance, and frequency,
   determine the reactance and impedance of your circuit.  Make sure to
   estimate your uncertainties.  Determine the impedance experimentally
