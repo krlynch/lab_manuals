@@ -55,23 +55,28 @@ energy in magnetic fields, and is the main subject a few weeks from
 now).  Also known as condensers, capacitors store energy an electric
 field by separating positive and negative charges on opposing
 terminals known as ``plates'' - which may or may not actually be
-plates-like.  Capacitors trace their lineage to the middle of the
+plate-like.  Capacitors trace their lineage to the middle of the
 Eighteenth century and the invention of the Leyden jar.  For forty
 years, the biggest names in natural philosophy spent time in the study
 of charge storage and improving capacitors, including Volta (for whom
-we name the volt) and Franklin (of American Revolution fame).
+we name the volt) and Franklin (of American Founding Father fame).
 
 In this lab, we will study the behavior of capacitors while we add or
-remove charge from the plates.
+remove charge from the plates.  Although we won't touch on it in this
+lab, $RC$ circuits form the foundation of the modern electronics that
+underlie a whole host of technologies, including radio, computers,
+environmental and medical sensors, and - not least of all - the touch
+screens in cell phones and the touch pads of laptops.
 
 \section{Theory}
 \label{sec:theory}
 
 We normally write Ohm's Law for the resistor as $V(t) = I(t) R$.  But
-what is that current $I(t)$?  In the circuits here, it's just the rate
-at which charge passes through the resistor.  Since all the charge the
-runs through the resistor ends up going from or to the capacitor,
-$q(t)$, it must also be the case that
+what is that current $I(t)$?  In the circuits here (see
+Figure~\ref{fig:circuit}), it's just the rate at which charge passes
+through the resistor.  Since all the charge that runs through the
+resistor ends up going from or to the capacitor, $q(t)$, it must also
+be the case that
 \begin{gather*}
   I(t) = \pm \deriv{q(t)}{t}\ ,
 \end{gather*}
@@ -83,14 +88,15 @@ form
   \deriv{q(t)}{t} = \pm \frac{V(t)}{R}\ .
 \end{gather*}
 In words, a resistor is a passive device where the applied voltage
-causes charge to flow through the device, while a capacitor is a
-passive device where the applied voltage causes a charge on the
-device; in equation form
+causes charge to flow \textit{through} the device, while a capacitor
+is a passive device where the applied voltage causes charge storage
+\textit{in} the device; in equation form
 \begin{gather*}
   q(t) = C V(t)\ .
 \end{gather*}
 The constant $C$ is called the capacitance, and is measured in Farads
-(named for Michael Faraday) where $\unit{F} = \unit{\nicefrac{C}{V}}$.
+(named for Michael Faraday, whose research output we will learn about
+later this semester) where $\unit{F} = \unit{\nicefrac{C}{V}}$.
 
 \begin{figure}
   \centering
@@ -109,11 +115,13 @@ in Figure~\ref{fig:circuit}.  This circuit has three states:
   connected to the capacitor and adds charge to the capacitor, and
 \item the ``discharging'' state, where the battery is disconnected,
   the two plates of the capacitor are connected to each other
-  through the resistor, and removes charge from the capacitor.
+  through the resistor, which removes charge from the capacitor.
 \end{inparaenum}
 
 We can analyze the dynamic states of the circuit using Kirchoff's
-Rules:
+Rules\footnote{As long as the frequencies aren't so high that we can't
+use the \textit{lumped element} approximation; talk to your instructor
+if you want to know more.}:
 \begin{enumerate}
 \item The Loop rule (energy conservation) requires the sum of all
   voltages drops around a closed loop to vanish, and
@@ -132,7 +140,7 @@ charging state:
   \end{align*}
   Again, the rate is negative, because the capacitor is discharging,
   not charging.  The method of solution for this equation is given in
-  Appendix~\ref{sec:solutions}.
+  Appendix~\ref{sec:solutions}:
   \begin{gather*}
     V_c(t) = V_R(t) = V_s e^{-t/RC}\ ,
   \end{gather*}
@@ -152,33 +160,36 @@ charging state:
     V_s - \deriv{q(t)}{t} R - \frac{q(t)}{C} &=0\\
     \deriv{q(t)}{t} + \frac{q(t)}{RC} &= \frac{V_s}{R}\ .
   \end{align*}
-  We can solve this differential equation (see
-  Appendix~\ref{sec:solutions}) for the time dependent voltage profile
-  across the capacitor.  If we start with a completely discharged
-  capacitor, the voltages across the resistors and capacitors vary as
+  We can solve this differential equation too for the time dependent
+  voltage profile across the capacitor; see
+  Appendix~\ref{sec:solutions}.  If we start with a completely
+  discharged capacitor, the voltages across the resistors and
+  capacitors vary as
   \begin{gather*}
     V_c(t) = V_s \left( 1 - e^{-t/RC} \right)\\
     V_R(t) = V_s e^{-t/RC}\ .
   \end{gather*}
-  As the capacitor charges, the voltage across - and hence the
-  charge on - the capacitor rises exponentially, while the voltage
-  across - and hence the current through - the resistor will fall
-  exponentially; see Figure~\ref{fig:curves}.
+  As the capacitor charges, the voltage across - and hence the charge
+  \textit{on} - the capacitor rises exponentially, while the voltage
+  across - and hence the current \textit{through} - the resistor will
+  fall exponentially; see Figure~\ref{fig:curves}.
 \end{enumerate}
 
 \begin{figure}
   \centering
   \includegraphics[width=2\textwidth/3]{figures/curves}
-  \caption{The capacitor charging and discharging curves}
+  \caption{The capacitor charging and discharging curves.  The
+    vertical blue line is the ``half life'' point of the charging and
+    discharging timeline.}
   \label{fig:curves}
 \end{figure}
 The quantity $RC$ - which appears in the argument of the exponential -
 is known as the \textit{time constant} of the system; it has units of
-time, and determines the time interval over which voltages, charges,
-and currents change in the circuit.  The time constant can be tuned by
-modifying either $R$ or $C$.  In practice, more resistor than
-capacitor values are commercially available, so it's easier to tune
-the resistor values.
+time (hence the name), and determines the time interval over which
+voltages, charges, and currents change in the circuit.  The time
+constant can be tuned by modifying either $R$ or $C$.  In practice,
+more resistor than capacitor values are commercially available, so
+it's usually easier to tune the resistor values.
 
 Given a known resistance we can measure the time constant of the $RC$
 circuit, and algebraically determine the capacitance $C$.  When
@@ -197,35 +208,18 @@ for \halflife:
 \end{align*}
 If we allow $R$ to vary, then this equation defines a line with
 abscissa $R$, ordinate \halflife, and slope $C \ln 2$.  If we measure
-multiple $(R, \halflife)$ pairs, we can plot the data and fit them to
-a line to extract the slope, and hence the capacitance.
+multiple $(R, \halflife)$ pairs, we can plot those data points, fit
+them to a line, and extract the slope - and hence the capacitance.
 
 \section{Procedures}
 \label{sec:procedures}
 
-\begin{figure}
-  \centering
-  \subfloat[][Wavetek Signal Generator]{
-    \label{fig:meters:siggen}
-    \includegraphics[angle=90,width=\textwidth/3]{figures/wavetek-signal-generator}
-% Photo by Trong Nguyen, York College CLT, 2012-02
-  } \qquad
-  \subfloat[][BK Precision Frequency Measuring Multimeter]{
-    \label{fig:meters:freq}
-    \includegraphics[width=\textwidth/3]{figures/bk_5460}
-% Photo by Kevin R. Lynch, 2012
-  }
-  \caption{The meters used in this lab.}
-  \label{fig:meters}
-\end{figure}
-You should receive an oscilloscope, a signal generator (see
-Figure~\ref{fig:meters:siggen}), a frequency measuring multimeter (see
-Figure~\ref{fig:meters:freq}), one unknown capacitor, a decade
-capacitance box, and a decade resistance box.
+You should receive an oscilloscope, a function generator, a
+multimeter, one unknown capacitor, a decade capacitance box, and a
+decade resistance box.
 
 \subsection{Time Constant of an RC Circuit}
 \label{sec:timeconst}
-
 
 \begin{figure}
   \centering
@@ -243,45 +237,46 @@ capacitance box, and a decade resistance box.
   \label{fig:RCmeasuring}
 \end{figure}
 In this part of the experiment, instead of a DC voltage and a
-mechanical switch, we apply a square wave signal to the capacitor as
-shown in Figure~\ref{fig:RCmeasuring}.  An ideal square wave has two
-values: high and low (here $V_s$ and 0), and it switches between them
-instantaneously.  The capacitor will charge when the voltage of the
-square wave is $V_s$; the capacitor will discharge when the voltage of
-the square wave is zero.  The oscilloscope traces of the charging and
-discharging of the capacitor are also shown in
+mechanical switch, we apply a \textit{square wave signal} to the
+capacitor as shown in Figure~\ref{fig:RCmeasuring}.  An ideal square
+wave has two values: high and low (here $V_s$ and 0), and it switches
+between them instantaneously.  The capacitor will charge when the
+voltage of the square wave is $V_s$; the capacitor will discharge when
+the voltage of the square wave is zero.  The oscilloscope traces of
+the charging and discharging of the capacitor are also shown in
 Figure~\ref{fig:RCmeasuring}.
 
-It should be noted that if the period of the square wave $T_s$ is much
-less than the time constant $\tau = RC$ ($T_s \ll \tau$), then the
-capacitor will start discharging before it has sufficient time to
-acquire the maximum charge $q_0$, making measurement of the time
-constant difficult.  What will this look like on the oscilloscope?  If
-$T_s$ is much more than $\tau$ ($T_s \gg \tau$), you will not be able
-to fit both the charging and discharging portions of the capacitor
-voltage on the oscilloscope trace at the same time.  Why?
+If the period of the square wave $T_s$ is much less than the time
+constant $\tau = RC$ ($T_s \ll \tau$), then the capacitor will start
+discharging before it has sufficient time to acquire the maximum
+charge $q_0$, making measurement of the time constant difficult.  What
+will this look like on the oscilloscope?  If $T_s$ is much more than
+$\tau$ ($T_s \gg \tau$), you will not be able to fit both the charging
+and discharging portions of the capacitor voltage on the oscilloscope
+trace at the same time.  Why?
 
 \begin{enumerate}
 \item Construct the circuit shown in
   Figure~\ref{fig:RCmeasuring:circuit}.
 \item Perform the initial turn-on procedure for the oscilloscope (from
-  the Cathode Ray Oscilloscope Lab).
-\item Set the trigger mode to AUTO, vertical coupling to AC, and slope
-  to ``+''.  To start, set both channels to $\unit[0.2]{V/div}$.  Make
-  sure that the ground of both traces is at the same position on the
-  screen. 
+  the Oscilloscope Lab).  To start, set both channels to
+  $\unit[0.2]{V/div}$.  Make sure that the ground of both traces is at
+  the same position on the screen.
 \item Start by setting the frequency of the square wave to about
   $\unit[100]{Hz}$ and the output voltage to $\unit[0.5]{V}$.
-\item Adjust $R$ to about $\unit[8]{k\Omega}$, and $C$ to about
-  $\unit[0.1]{\mu F}$.  What is the time constant of this combination?
+\item Now we have to set $R$ and $C$.  Adjust $R$ to about
+  $\unit[8]{k\Omega}$, and $C$ to about $\unit[0.1]{\mu F}$.  What is
+  the time constant of this combination?
 \item Adjust the frequency of the square wave, and the time and
-  voltage settings of the oscilloscope to obtain the traces as in
-  Figure~\ref{fig:RCmeasuring:oscope}.  Measure and record $R$, $C$,
-  $f$, $V$, \halflife, and the oscilloscope settings.
-\item Measure the height of the decay curve at a number of points;
-  switch the slope to ``-'', and measure the height of the charging
-  curve at a number of points.  You will use these to map out the
-  charging/discharging curves, and fit for the time constant.
+  voltage settings of the oscilloscope until you obtain traces similar
+  to Figure~\ref{fig:RCmeasuring:oscope}.  Measure and record $R$,
+  $C$, $f$, $V$, \halflife, and the oscilloscope settings.
+\item Measure the voltage of the decay curve above ground at a number
+  of points using the oscilloscope cursors; similarly, measure the
+  height of the charging curve at a number of points.  You will use
+  these to map out the charging/discharging curves, and fit for the
+  time constant.
+\item Repeat for a second set of $R$ and $C$.
 \end{enumerate}
 
 \subsection{Determine the Capacitance}
@@ -300,6 +295,11 @@ of an unknown capacitor.
   \halflife.
 \item Repeat for four or five values of $R$; you need enough points to
   fit a line through your $(R,\halflife)$ pairs.
+\item Use your multimeter to directly measure the capacitance, for
+  comparison to your extracted value.\footnote{The multimeter uses an
+    automated version of exactly this procedure to calculate $C$,
+    based on a time constant measurement across a precision internal
+    resistor.}
 \end{enumerate}
 
 \appendix
@@ -420,14 +420,17 @@ submit them before your lab session!
   this:
   \begin{inparaenum}
   \item use a mathematics package capable of sophisticated statistical
-    analysis, such as R, Octave, Matlab, Mathematica, etc., or
-  \item using a spreadsheet, you can transform your data into a linear
-    function, and fit that in Excel using a trendline analysis.
+    analysis, such as R, Octave, Matlab, Mathematica, Root, etc., or
+  \item using a spreadsheet, fit the data using an exponential
+    trendline analysis.  Alternatively, you can transform your
+    spreadsheet data into a linear data set, and do a linear trendline
+    analysis. 
   \end{inparaenum}
   Estimate the uncertainty of this measured time constant.  You should
   also estimate the time constant from the measured \halflife.  Do
   these multiple experimental extractions agree within your estimated
-  uncertainty?  Do they agree with the theoretical expectation?
+  uncertainty?  Do they agree with the theoretical expectation given
+  your measured $R$ and $C$?
 \item Determine the unknown capacitance.  Plot your $(R, \halflife)$
   data pairs, and fit the data to a line.  Extract the capacitance
   from the fitted line parameters.  Estimate the uncertainty of this
