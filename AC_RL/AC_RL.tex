@@ -53,15 +53,16 @@
 You have studied the behavior of RC circuits under both direct and
 alternating current conditions.  The final passive component we must
 consider is the \textit{inductor}.  The voltage across a capacitor is
-proportional to the charge on it ($V(t) = q(t)/C$), and the voltage
-across a resistor is proportional to the rate at which charge flows
-through it ($V_R(t) = R \dd q(t)/\dd t$), while the voltage across the
-inductor is proportional to the rate of change of the current
+proportional to the charge \textit{on} it ($V(t) = q(t)/C$), and the
+voltage across a resistor is proportional to the rate at which charge
+flows \textit{through} it ($V_R(t) = R \dd q(t)/\dd t$), while the
+voltage across the inductor is proportional to the \textit{rate of
+  change} of the current through it
 \begin{gather*}
   V_L(t) = - L \deriv{I(t)}{t}\ .
 \end{gather*}
 The minus sign indicates that the voltage across the inductor seeks to
-minimize or negate the changing current.
+counter the changing current (a phenomenon known as Lenz's Law).
 
 \begin{figure}
   \centering
@@ -104,11 +105,12 @@ leading to the differential equation
 \begin{gather*}
   \deriv{I(t)}{t} + \frac{R}{L} I(t) = \frac{V_s(t)}{L}\ .
 \end{gather*}
-This is, in all important ways, \textit{identical} to the behavior of
-the charge on a capacitor.  The time constant for current changes is
-here $\tau = L/R$.  Again, we solve the equation in all its
-particulars in Appendix~\ref{sec:solutions}.  For a sinusoidally
-varying source voltage
+The behavior of this \textit{current} is, in all important ways,
+\textit{identical} to the behavior of the \textit{charge} on a
+capacitor.  The time constant for current changes is $\tau = L/R$.
+Again, we solve the equation in all its particulars in
+Appendix~\ref{sec:solutions}.  For a sinusoidally varying source
+voltage
 \begin{gather*}
   V_s(t) = V_s \cos\omega t\ ,
 \end{gather*}
@@ -174,25 +176,28 @@ capacitor!  Compare the amplitude and phase response curves in
 Figure~\ref{fig:frequency} with the same curves in the lab
 \textit{Alternating Current RC Circuits}.
 
+If you are left wondering what happens when you put a AC voltage
+source, a resistor, a capacitor, \textit{and} an inductor into a
+single circuit, you're thinking along the right lines.  Stay tuned for
+next week.
+
 \section{Procedures}
 \label{sec:procedures}
 
-You should receive two multimeters (one of which should be a
-BK-5460), an oscilloscope, a function generator, a
-decade resistance box, and an inductor.
+You should receive two multimeters, an oscilloscope, a function
+generator, a decade resistance box, and a decade inductor box.
 
 \begin{enumerate}
-\item First, let's select component values for testing.  We don't have
-  variable inductors available; instead, use the fixed inductor you
-  have been provided, and record the inductance.  How much uncertainty
-  do you think there is in this value?  Select a frequency between
-  \unit[300]{Hz} and \unit[600]{Hz}.  Calculate $X_L$ and choose a
-  value for $R \approx 1.2 X_L$.  Measure and record the value of $R$.
-\item Configure the circuit for testing shown in
-  Figure~\ref{fig:rlcircuit}.  Insert the Simpson multimeter to record
+\item First, let's select component values for testing.  Choose an
+  inductor value somewhere around \unit[7]{H}.  Select a frequency
+  between \unit[300]{Hz} and \unit[600]{Hz}.  Calculate $X_L$ and
+  choose a value for $R \approx 1.2 X_L$.  Measure and record the
+  value of $R$.
+\item Configure the circuit for testing as shown in
+  Figure~\ref{fig:rlcircuit}.  Insert one of the multimeters to record
   the AC current; except in the last two steps of the procedure, make
   sure the current remains constant throughout the experiment.
-\item Using the BK Precision meter, record the frequency $f$, and the
+\item Using the other multimeter, record the frequency $f$, and the
   RMS AC voltages across the signal generator $V_s$, the resistor
   $V_R$, and the inductor $V_L$.
 \item \label{item:phase} Let's measure the phase shift between the
