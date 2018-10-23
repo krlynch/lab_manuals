@@ -69,7 +69,7 @@ Figure~\ref{fig:rlccircuit}.
 \label{sec:theory}
 
 Once again, let's analyze this circuit using Kirchoff's Rules.  As
-always, you find
+always, you should find
 \begin{gather*}
   V_s(t) - V_R(t) - V_L(t) - V_C(t) = 0\ ,
 \end{gather*}
@@ -80,9 +80,10 @@ labs before
   = V_s(t)\ ,
 \end{gather*}
 where $q(t)$ is the charge on the capacitor.  We will not actually
-solve this equation, as the derivation is beyond the mathematics level
-of this course; however, in Appendix~\ref{sec:solutions} we quote some
-important results.  For a sinusoidally varying source voltage
+solve this equation, as the derivation is somewhat beyond the
+mathematics level of this course; however, in
+Appendix~\ref{sec:solutions} we quote some important results.  For a
+sinusoidally varying source voltage
 \begin{gather*}
   V_s(t) = V_s \cos\omega t\ ,
 \end{gather*}
@@ -90,8 +91,8 @@ we find the current is again out of phase, but this time, whether the
 current lags or leads the applied voltage depends on whether the
 inductive or capacitive reactances (both defined as before) dominate
 the behavior of the circuit at the driving voltage.  Comparing the
-solutions in the Appendix with our differential equation here,
-matching coefficients, we have
+solutions in the Appendix with our differential equation here
+and matching coefficients, we have
 \begin{align*}
   \omega_0 &= \frac{1}{\sqrt{LC}} & 2\beta &= \frac{R}{L}\ .
 \end{align*}
@@ -148,15 +149,15 @@ thought of as a parametric plot, where the independent variable, $t$,
 is implicit (not displayed), while the horizontal and vertical axes
 trace out two different dependent variables, $V_1(t)$ and $V_2(t)$.
 The XY mode is most useful when the two signals have commensurate
-frequencies (their ratio is rational), particularly when their
-frequencies are the same.  In these cases, the XY signals give both
-relative frequency and relative phase information in an easy to
-interpret manner; such plots are called \textit{Lissajous
+frequencies (their ratio is rational); that is in particular true when
+their frequencies are the \textit{same}.  In these cases, the XY
+signals give both relative frequency and relative phase information in
+an easy to interpret manner; such plots are called \textit{Lissajous
   Figures}. Figure~\ref{fig:lissajous} shows a few of these plots.
 When the two signals have the same frequency, the figure traces an
 ellipse.  The major axis of the ellipse rotates, and the minor axis
-shrinks, as the phase changes.  As the phase approaches 0, the minor
-axis also vanishes.
+shrinks, as the phase changes.  As the phase approaches zero, the
+minor axis also vanishes.
 
 Just as in the RC and RL settings, we can define a circuit impedance
 by
@@ -223,10 +224,10 @@ Clearly the current and the voltage across the resistor will be
 maximized at the same frequency:
 \begin{gather*}
   \left.\deriv{V_R(\omega)}{\omega}\right|_{\omega_R} = 0
-  \longrightarrow \omega_R = \omega_0\ ,
+  \longrightarrow \omega_R = \omega_0\ .
 \end{gather*}
-or the \textit{current amplitude resonance} occurs at the same
-frequency as the natural oscillation frequency of the circuit.
+The \textit{current amplitude resonance} occurs at the same
+frequency as the natural oscillation frequency of the circuit!
 Interestingly, the amplitude resonance for the capacitor and inductor
 voltages are \textit{not} the same as for the current!  For the
 capacitor,
@@ -250,22 +251,23 @@ conditions will only occur if the radical is real.
 \section{Procedures}
 \label{sec:procedures}
 
-You should receive two multimeters (one of which should be a
-BK-5460), an oscilloscope, a function generator, a
-decade resistance box, a decade capacitance box, and an inductor.
+You should receive two multimeters, an oscilloscope, a function
+generator, a decade resistance box, a decade capacitor box, and a
+decade inductor box.
 
 \begin{enumerate}
 \item First, select component values for testing.  Select a frequency
-  between \unit[300]{Hz} and \unit[600]{Hz}, and a value for $C$
-  between $\unit[0.06]{\mu F}$ and $\unit[0.1]{\mu F}$.  Record the
-  value of the inductance, $L$.  Measure and record the values of the
-  inductor resistance $R'$, and $C$.  Calculate $X = \left| X_L-X_C
-  \right|$ and choose a value for $R + R' \approx 1.2 X$.  Set,
-  measure and record $R$.
+  between \unit[300]{Hz} and \unit[600]{Hz}, a value for $C$ between
+  $\unit[0.06]{\mu F}$ and $\unit[0.1]{\mu F}$, and a value for $L$
+  around \unit[7]{H}.Measure and record the values of the inductor
+  resistance $R'$, and $C$.  Calculate $X = \left| X_L-X_C \right|$
+  and choose a value for $R + R' \approx 1.2 X$.  Set, measure and
+  record $R$.\fxfatal{what to the resistances for the decade inductors
+  look like?}
 \item Configure the circuit for testing shown in
-  Figure~\ref{fig:rlccircuit}.  Insert the Simpson multimeter to
-  record the AC current.
-\item Using the BK Precision meter, record the frequency $f$, and the
+  Figure~\ref{fig:rlccircuit}.  Insert one multimeter to record the AC
+  current.
+\item Using the other multimeter, record the frequency $f$, and the
   RMS AC voltages across the signal generator $V_s$, the resistor
   $V_R$, the capacitor $V_C$, and the inductor $V_L$.  Are these
   values consistent?
@@ -293,7 +295,8 @@ decade resistance box, a decade capacitance box, and an inductor.
   \end{enumerate}
   In an ideal world each method should give the same result, although
   the last method is both easiest and most accurate.  Do all three
-  methods, in fact, produce the same result?
+  methods, in fact, produce the same result within the respective
+  uncertainties?
 \item \label{item:current_response} Next, map out the amplitude of the
   current response.  Without changing $R$ or $C$, vary the frequency
   over, say, ten points, and record the frequency, RMS voltage $V_s$
@@ -301,13 +304,15 @@ decade resistance box, a decade capacitance box, and an inductor.
   about half the phase resonance, the high frequency should be about
   twice the phase resonance, and the middle point should be at the
   phase resonance.
-\item \label{item:amplitude_resonance} Finally, let's search for the
-  amplitude resonances of $V_C(t)$ and $V_L(t)$.  Without changing
-  $C$, set $R+R'=0.4X$.\footnote{Why do we have to change $R$?}
-  Confirm that the phase resonance has the same frequency.  Predict
-  the frequencies of both amplitude resonances.  Using either the
-  multimeter or the oscilloscope, search for the amplitude resonances.
-  Do they match your prediction?
+  \begin{comment}
+  \item \label{item:amplitude_resonance} Finally, let's search for the
+    amplitude resonances of $V_C(t)$ and $V_L(t)$.  Without changing
+    $C$, set $R+R'=0.4X$.\footnote{Why do we have to change $R$?}
+    Confirm that the phase resonance has the same frequency.  Predict
+    the frequencies of both amplitude resonances.  Using either the
+    multimeter or the oscilloscope, search for the amplitude
+    resonances.  Do they match your prediction?
+  \end{comment}
 \end{enumerate}
 
 \appendix
@@ -319,12 +324,12 @@ Applying Kirchoff's rules to the series RLC circuit leads to a second
 order linear differential equation with constant coefficients, with a
 driving function.  We won't solve this function in all its glory as we
 did for the first order equation that arises for the RC and RL
-equations.  In fact, solving the equation is somewhat beyond the level
-of the prerequisite mathematics for this course, so we'll just quote
-the solution here.\footnote{Although you can look up the solution
-  methods on the net, or in any standard sophomore level physics or
-  mathematics text.  I take the notation from Marion and Thornton's
-  \textit{Classical Dynamics}.}
+equations.  In fact, since solving the equation is somewhat beyond the
+level of the prerequisite mathematics for this course, we'll just
+quote the solution here.\footnote{Although you can look up the
+  solution methods on the net, or in any standard sophomore level
+  physics or mathematics text.  I take the notation from Marion and
+  Thornton's \textit{Classical Dynamics}.}
 
 Let's write the differential equation in the form
 \begin{gather*}
@@ -333,15 +338,16 @@ Let's write the differential equation in the form
 \end{gather*}
 A full solution to this equation can be written in terms of two
 functions: 
- \begin{enumerate}
-\item The ``complementary'' or ``homogeneous'' solution $q_c(t)$, when
-  $A=0$.  This is the transient solution, and decays away
-  exponentially; we'll not dwell on this any further.
-\item The ``particular'' solution $q_p(t)$, where we don't drop the
-  driving term.  We previously called this one the ``steady state''
-  solution.  Typically, we take ``trial solutions'' of the same form
-  as the driving term, and see if we can come work up a function that
-  satisfies the equation.
+\begin{enumerate}
+\item The ``complementary'' or ``homogeneous'' solution $q_c(t)$,
+  where we \textit{drop} the driving term (set $A=0$).  This is the
+  transient solution, and decays away exponentially; we'll not dwell
+  on this any further.
+\item The ``particular'' solution $q_p(t)$, where we \textit{don't}
+  drop the driving term.  We previously called this one the ``steady
+  state'' solution.  Typically, we take ``trial solutions'' of the
+  same form as the driving term, and see if we can come work up a
+  function that satisfies the equation.
 \end{enumerate}
 Let's try a particular solution that's a sinusoid.  Before diving in,
 let's think about the \textit{form} of the physical solution that
@@ -350,9 +356,9 @@ differential equation is the charge on the capacitor, but the physics
 we're interested in is the phase difference between the
 \textit{current} and the drive voltage.  Thus, we want a current that
 is of the same functional form as the drive voltage, plus a phase
-offset.  Since we choose a drive voltage that is a cosine, and current
-is the derivative of the charge, we want to choose a steady state
-(particular) solution of the form
+offset.  Since we choose a drive \textit{voltage} that is a cosine,
+and current is the derivative of the \textit{charge}, we want to
+choose a steady state (particular) solution of the form
 \begin{gather*}
   q_p(t) = D \sin\left( \omega t + \delta \right)\ .
 \end{gather*}
@@ -368,12 +374,12 @@ Next, we expand the $\sin$ and $\cos$ terms, since:
   \cos(a+b) &= \cos\omega t \cos\delta - \sin\omega t \sin\delta &
   \sin(a+b) &= \sin\omega t \cos\delta + \cos\omega t \sin\delta\ ,
 \end{align*}
-which gives six terms on the left, half of which contain a $\sin\omega
-t$ and the other have contain $\cos\omega t$.  The right hand side
-contains only $\cos\omega t$.  If this is a solution, the coefficients
-of the $\sin\omega t$ and $\cos\omega t$ terms must separately be
-equal, and must be collectively consistent.  Thus, we have two
-equations for the two unknowns $D$ and $\delta$
+which gives six terms on the left, half of which contain a
+$\sin\omega t$ and the other half a $\cos\omega t$.  The right hand
+side contains only $\cos\omega t$.  If this is a solution, the
+coefficients of the $\sin\omega t$ and $\cos\omega t$ terms must
+separately be equal, and must be collectively consistent.  Thus, we
+have two equations for the two unknowns $D$ and $\delta$
 \begin{gather*}
   \sin\omega t: \qquad -D\omega^2 \cos\delta - 2\beta D\omega
   \sin\delta + D\omega_0^2 \cos\delta = 0\\
@@ -446,11 +452,11 @@ submit them before your lab session!
 \section*{Post-Lab Exercises}
 
 \begin{enumerate}
-\item From your recorded inductance, and the measured resistance,
-  capacitance, inductance, and initial frequency, determine the
-  impedance of your circuit.  Make sure to estimate your
-  uncertainties.  Determine the impedance experimentally via another
-  method, taking care of the uncertaintites. % V_s/I
+\item From your measured resistance, capacitance, inductance, and
+  initial frequency, determine the impedance of your circuit.  Make
+  sure to estimate your uncertainties.  Determine the impedance
+  experimentally via another method, taking care of the
+  uncertaintites. % V_s/I
   Do you get the same results?
 \item Estimate the uncertainties on the measured values of $V_s$,
   $V_L$, $V_C$, and $V_R$.  Are these values consistent with each
@@ -469,10 +475,12 @@ submit them before your lab session!
   current amplitudes measured by oscilloscope and by multimeter match,
   within uncertainties, and do they comport with theoretical
   expectations?
-\item Why did you have to change the resistance value for
-  Step~\ref{item:amplitude_resonance}?  Did you find the amplitude
-  resonances?  If so, do their values agree with your theoretical
-  predictions?
+  \begin{comment}
+  \item Why did you have to change the resistance value for
+    Step~\ref{item:amplitude_resonance}?  Did you find the amplitude
+    resonances?  If so, do their values agree with your theoretical
+    predictions?
+  \end{comment}
 \item Discuss briefly whether you have met the objectives of the lab
   exercises.
 \end{enumerate}
